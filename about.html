@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style_about.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+    <title>Adam Angelov Architecture</title>
+
+    <style>
+    </style>
+
+</head>
+
+
+<header class="header">
+        <nav class="navbar">
+            
+
+            <a href="index.html" class="nav-logo">Adam Angelov</a>
+            
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="Angel_art.html" class="nav-link">Art</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_design_gallery.html" class="nav-link">Design</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_multimedia_gallery.html" class="nav-link">Multimedia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_architecture.html" class="nav-link">Architecture</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_about.html" class="nav-link">About</a>
+                </li>
+                
+                
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+      
+    <section class="main_container">
+        <p>+ 45 50 16 90 29  (DK)</p>
+        <p>+420 773 977 600  (CZ)</p>
+        <p>adamangelo.osvc@gmail.com</p>
+    </section>
+
+    <section class="about">
+        <p>Adam Angelov is young starting visual developer and 3D enthusiast with strong visual sense</p>
+        <h3>services</h3>
+        <p>3D modeling and Visualizations</p>
+        <p>Models and Concepts</p>
+        <p>Multimedia design</p>
+
+
+    </section>
+
+
+
+
+<footer>  
+    <p>I am always look forward to new projects!</p>
+</footer>
+        
+        <script>
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+
+            hamburger.addEventListener("click", mobileMenu);
+
+            function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+}
+            const navLink = document.querySelectorAll(".nav-link");
+
+            navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+            function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+
+}
+
+            function myFunction() {
+                if (video.paused) {
+                video.play();
+                btn.innerHTML = "Pause";
+                } else {
+                video.pause();
+                btn.innerHTML = "Play";
+  }
+}
+
+        </script>
+        <!---script taken from this site-link below. I wanted that hamburger menu...
+        https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-hamburger-menu-using-html-css-and-javascript-4gci 
+        -->
