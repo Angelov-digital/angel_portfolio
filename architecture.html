@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style_arch.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+    <title>Adam Angelov Architecture</title>
+
+    <style>
+    </style>
+
+</head>
+
+
+<header class="header">
+        <nav class="navbar">
+            
+
+            <a href="index.html" class="nav-logo">Adam Angelov</a>
+            
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="Angel_art.html" class="nav-link">Art</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_design_gallery.html" class="nav-link">Design</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_multimedia_gallery.html" class="nav-link">Multimedia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_architecture.html" class="nav-link">Architecture</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_about.html" class="nav-link">About</a>
+                </li>
+                
+                
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+      
+    <section class="main_container">
+
+      <ul class="content_wrapper">
+          <div class="container">
+              <img src="img/arch/parter view 1_3 fountain.jpg" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+                <div class="text">Řeporyje railway station - parter - Arch. visualization</div>
+              </div>
+          </div>
+            <div class="container">
+              <img src="img/arch/corridor 1_4.jpg" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+                <div class="text">Řeporyje railway station - corridor - Arch. visualization</div>
+              </div>
+            </div>
+            <div class="container">
+              <img src="img/arch/peron gallery 2.png" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+                <div class="text">Řeporyje railway station - peron - Arch. visualization</div>
+              </div>
+            </div>
+            <div class="container">
+              <img src="img/arch/repo1.jpg" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+                <div class="text">Řeporyje railway station - Arch. visualization</div>
+              </div>
+            </div>
+            <div class="container">
+              <img src="img/arch/result1.jpg" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+                <div class="text">Šárka Business Park - arch model 1:500 for Loxia </div>
+              </div>
+            </div>
+            <div class="container">
+                <img src="img/arch/result4.jpg" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                  <div class="text">Šárka Business Park - arch model 1:500 for Loxia</div>
+                </div>
+              </div>
+              <div class="container">
+                <img src="img/arch/result3.jpg" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                  <div class="text">Šárka Business Park - arch model 1:500 for Loxia</div>
+                </div>
+              </div>
+
+              <div class="container">
+                <img src="img/arch/fakulta 1 arch model 1_200.jpg" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                  <div class="text">InterContinental hotel site - arch model 1:300 - Prague Pařížská 30</div>
+                </div>
+              </div>
+              <div class="container">
+                <img src="img/arch/fakulta 2.jpg" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                  <div class="text">InterContinental hotel site - arch model 1:300 - Prague Pařížská 30</div>
+                </div>
+              </div>
+              <div class="container">
+                <img src="img/arch/fakulta 3.jpg" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                  <div class="text">InterContinental hotel site - arch model 1:300 - Prague Pařížská 30</div>
+                </div>
+              </div>
+
+          
+      </ul>
+
+  </section>
+  <footer>  
+    <p>© Adam Angelov 2021</p>
+  </footer>
+        
+        <script>
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+
+            hamburger.addEventListener("click", mobileMenu);
+
+            function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+}
+            const navLink = document.querySelectorAll(".nav-link");
+
+            navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+            function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+
+}
+        // Get the video
+            var video = document.getElementById("myVideo");
+
+// Get the button
+            var btn = document.getElementById("myBtn");
+
+// Pause and play the video, and change the button text
+            function myFunction() {
+                if (video.paused) {
+                video.play();
+                btn.innerHTML = "Pause";
+                } else {
+                video.pause();
+                btn.innerHTML = "Play";
+  }
+}
+
+        </script>
+        <!---script taken from this site-link below. I wanted that hamburger menu...
+        https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-hamburger-menu-using-html-css-and-javascript-4gci 
+        -->
