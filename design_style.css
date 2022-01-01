@@ -1,0 +1,244 @@
+
+    @font-face {
+        font-family: azonix;
+        src: url(fonts/Azonix.otf);
+        font-weight: azo;
+}
+
+    @font-face {
+        font-family: expansiva ;
+        src: url(fonts/expansiva/Expansiva.otf);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(243, 243, 243);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+h1{
+    font-family: 'Open Sans', sans-serif;
+}
+h3{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+/*navigation*/
+.header{
+    position: sticky;
+    right: 0px;
+    top: 0px;   
+}
+
+.navbar {
+    position: fixed;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    width: 100%;
+    font-family: expansiva;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.507);
+    
+}
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #ffffff;
+    font-family: expansiva;
+
+}
+
+.nav-link:hover{
+    color: #ffffff;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    
+    .navbar {
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.507);
+        
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 100;
+        
+    }
+    /*code style of hamburger menu from -  https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-hamburger-menu-using-html-css-and-javascript-4gci*/
+    .nav-menu.active {
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 10;
+    
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    } 
+}
+
+/*gallery styling*/
+
+
+/*gallery v2 styling*/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    top: 90px;
+    position: absolute;
+    z-index: -2;
+  }
+  
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 33%;
+    max-width: 33.3%;
+    padding: 40px;
+    background-color: rgb(31, 31, 31);
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    z-index: 10;
+  }
+  .column h1{
+      padding: 3px;
+  }
+  
+  .column h3{
+    padding: 3px;
+}
+
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+      
+  }
+}
+.pagename{
+    z-index: -1;
+    text-align: center;
+    padding: 10px;
+    top: 50px;
+    position: absolute;
+    width: 100%;
+    font-family: expansiva;
+    font-size: 15px;
+    background-color: rgb(31, 31, 31);
+}
+.pagename h1 {
+    font-family: expansiva;
+}
+
+/*footer*/
+footer{
+    position: fixed;
+    bottom:0px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.507);
+    height: 50px;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+
+}
+footer p{
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    top: 40%;
+}
