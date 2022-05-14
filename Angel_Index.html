@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style_homepage.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+    <title>Adam Angelov</title>
+
+    <style>
+      body{
+	margin:0;
+  }
+  canvas{
+	display:block;
+  z-index: 100;
+  }
+    </style>
+
+</head>
+
+<body>
+  <script src="three.js"></script>
+  <script type="module" src="GLTFLoader.js"></script>
+  <script src ="OrbitControls.js"></script>
+   <script type="module">
+
+    import {GLTFLoader} from "./GLTFLoader.js"
+
+let camera, scene, renderer, cube, clock, mixer, obj, light, delta, controls;
+const manager = new THREE.LoadingManager();
+const loader = new GLTFLoader(manager);
+manager.onLoad = function () {
+    console.log("DONE");
+    scene.background = new THREE.Color('#21282F');
+    renderer.setAnimationLoop(animate);
+    window.addEventListener('resize', onWindowResize, false);
+
+};
+
+function init() {
+    scene = new THREE.Scene();
+    clock = new THREE.Clock();
+    loader.load('scene.gltf',
+        function (gltf) {
+            obj = gltf.scene
+            scene.add(obj);
+           // camera = gltf.cameras['0']; //if you have one camera or you need the first
+            mixer = new THREE.AnimationMixer(gltf.scene);
+            gltf.animations.forEach((clip) => {
+                mixer.clipAction(clip).play();
+            });
+            gltf.animations; // Array<THREE.AnimationClip>
+            gltf.scene; // THREE.Group
+            gltf.scenes; // Array<THREE.Group>
+            gltf.cameras; // Array<THREE.Camera>
+            gltf.asset; // Object
+
+        },
+        // called while loading is progressing
+        function (xhr) {
+            console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+        },
+        // called when loading has errors
+        function (error) {
+
+            console.log('An error happened');
+
+        }
+    );
+
+
+    // Init camera (PerspectiveCamera)
+    camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+    );
+    // Position camera
+    camera.position.set(0, 2, 10);
+
+    // Init renderer
+    renderer = new THREE.WebGLRenderer({antialias: true});
+
+    // Set size (whole window)
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    //Render light/shadows from gltf file
+    renderer.physicallyCorrectLights = true;
+    renderer.shadowMap.enabled = true;
+
+
+    // Render to canvas element
+    document.body.appendChild(renderer.domElement);
+
+    //Add mouse control to camera
+    controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.2;
+    controls.keys = {
+        LEFT: 'ArrowLeft', //left arrow
+        UP: 'ArrowUp', // up arrow
+        RIGHT: 'ArrowRight', // right arrow
+        BOTTOM: 'ArrowDown' // down arrow
+    }
+    //Auto rotate camera
+    /*controls.autoRotate = true;
+    controls.autoRotateSpeed *= -1;*/ //rotate anti clockwise
+
+    //light = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
+    //scene.add(light);
+
+    // Init BoxGeometry object (rectangular cuboid)
+    //const geometry = new THREE.BoxGeometry(3, 3, 3);
+
+    // Create material with color
+    //const material = new THREE.MeshBasicMaterial({color: 0x0000ff});
+
+    // Add texture -
+    // const texture = new THREE.TextureLoader().load('textures/crate.gif');
+
+    // Create material with texture
+    // const material = new THREE.MeshBasicMaterial({ map: texture });
+
+    // Create mesh with geo and material
+    //cube = new THREE.Mesh(geometry, material);
+
+    // Add to scene
+    //scene.add(cube);
+
+}
+
+function animate() {
+    controls.update();
+    //obj.rotation.y -= 0.01
+    delta = clock.getDelta();
+    mixer.update(delta);
+    renderer.render(scene, camera);
+}
+
+function onWindowResize() {
+    // Camera frustum aspect ratio
+    camera.aspect = window.innerWidth / window.innerHeight;
+    // After making changes to aspect
+    camera.updateProjectionMatrix();
+    // Reset size
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+init();
+
+  
+   </script>
+    <header class="header">
+        <nav class="navbar">
+            
+
+            <a href="#" class="nav-logo">Adam Angelov</a>
+            
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                  <a href="Angel_3D.html" class="nav-link">3D</a>
+                </li>
+                <li class="nav-item">
+                  <a href="Angel_architecture.html" class="nav-link">Architecture</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_graphics.html" class="nav-link">Graphics</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_design.html" class="nav-link">Design</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_multimedia_gallery.html" class="nav-link">Webdesign UI/UX</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="Angel_art.html" class="nav-link">Art</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Angel_about.html" class="nav-link">About</a>
+                </li>   
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main_container">
+      
+
+      <div class="container-slideshow">
+        
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 4</div>
+              <img src="img/slideshow homepage/VTOL4k3.png" alt="3D" class="image-show" style="width:100%">
+              <div class="textc"></div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 4</div>
+              <img src="img/slideshow homepage/arch.png" alt="3D" class="image-show" style="width:100%">
+              <div class="textc"></div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">4 / 4</div>
+              <img src="img/slideshow homepage/oil.png" alt="3D" class="image-show" style="width:100%">
+              <div class="textc"></div>
+              
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 4</div>
+              <img src="img/slideshow homepage//CAD.png" alt="3D" class="image-show" style="width:100%">
+              <div class="textc"></div>
+              
+            </div>
+
+            <br>
+
+            <div class="dotbox" style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>  
+            </div>
+
+            <p class="moto">Visions trough Art</p>
+            
+            <br>
+      </div>
+
+      
+
+      <ul class="content_wrapper">
+
+        <a href="">
+            <li class="container">
+              <img src="img/3D/Alsit and seraph scene effect3.jpg" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+                <div class="text">3D</div>
+              </div>
+            </a>
+          </li> 
+                
+                
+                <a href="Angel_architecture.html">
+                  <li class="container">
+                    <img src="img/arch/repo1.jpg" alt="Avatar" class="image" style="width:100%">
+                    <div class="middle">
+                      <div class="text">Architectural Visualizations and Models</div>
+                    </div>
+                  </a>
+                </li>
+                
+                <a href="Angel_multimedia_gallery.html">
+                  <li class="container">
+                    <img src="img/design/ecocover/fragmented.gif" alt="Avatar" class="image" style="width:100%">
+                    <div class="middle">
+                      <div class="text">
+                          <p>Webdesign</p>
+                      </div>
+                  </a>
+              </li>
+                
+                <a href="Angel_art.html">
+                    <li class="container">
+                      <img src="img/art/Heavy dream.png" alt="Avatar" class="image" style="width:100%">
+                      <div class="middle">
+                        <div class="text">Art</div>
+                      </div>
+                    </a>
+                  </li>
+                
+
+                <a href="Angel_design_gallery.html">
+                  <li class="container">
+                    <img src="img/design/future/pozadi3_2xseda.jpg" alt="Avatar" class="image" style="width:100%">
+                    <div class="middle">
+                      <div class="text">Design</div>
+                    </div>
+                  </a>
+                </li>
+                                      
+      </ul>
+
+      <footer>  
+        <p>© Adam Angelov 2021</p>
+      </footer>
+            
+        </section>
+
+
+
+
+        
+        
+        
+        <script src="js-index.js"></script>
+
+
+        <!---script taken from this site-link below. I wanted that hamburger menu...
+        https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-hamburger-menu-using-html-css-and-javascript-4gci 
+        -->
+</body>

@@ -1,0 +1,299 @@
+
+    @font-face {
+        font-family: azonix;
+        src: url(fonts/Azonix.otf);
+        font-weight: azo;
+}
+
+    @font-face {
+        font-family: expansiva ;
+        src: url(fonts/expansiva/Expansiva.otf);
+    }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+body {
+    background-color: #101010;
+    color: #ffffff;
+    background-repeat:no-repeat;
+    background-position:center center fixed;
+    /*background-image: url(img/portal.jpg);*/
+    background-attachment:fixed;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    max-height: 100%;
+    min-height: 500px;
+    background-position: center;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+.video_container{
+    position: fixed;
+    top: 0px;
+    z-index: -10;
+    width: 100%;
+
+
+}
+#myVideo {
+  display: block ;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  z-index: -10;
+
+  }
+/*navigation*/
+.header{
+    position: sticky;
+    right: 0px;
+    top: 0px;   
+}
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    width: 100%;
+    font-family: expansiva;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.85);;
+}
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #ffffff;
+    font-family: expansiva;
+
+}
+
+.nav-link:hover{
+    color: #ffffff;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+@media only screen and (min-width: 768px) {
+    .content_wrapper{
+        position: absolute;
+        top: 150%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        z-index: -1;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #myVideo {
+        display: block ;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        z-index: -10;
+        position: absolute;
+        top: 100px;
+    }
+    .navbar {
+        background-color: #00000000;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 8rem;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        
+    }
+    /*code style of hamburger menu from -  https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-hamburger-menu-using-html-css-and-javascript-4gci*/
+    .nav-menu.active {
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 100;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    /*media style section*/
+    .main{
+        position: absolute;
+        min-width: 600px;
+    }
+    .content_wrapper{
+        position: absolute;
+        top: 70%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        z-index: -1;
+    }
+
+
+
+}
+@media only screen and (max-width: 500px) {
+    .content_wrapper{
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        z-index: -1;
+    }
+}
+@media only screen and (max-width: 340px) {
+    .content_wrapper{
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        z-index: -1;
+    }
+}
+
+
+/*interpereting visions*/
+.overlay_main_text{
+    position: fixed;
+    top: 50%;
+    width: 30%;
+    right: 35%;
+    text-align: center;
+    font-family: expansiva;
+    font-size: 12px;
+    background-color: #1010106c;
+    padding: 15px;   
+
+}
+
+/*gallery*/
+
+
+
+.imgli{
+    
+    flex-grow: 1;
+}
+.gallery_item {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+
+/*footer*/
+footer{
+    
+    position: absolute;
+    top: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.507);
+    height: 60px;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+
+}
+footer p{
+    padding: 15px;
+    color: #101010;
+}
+
+.content {
+    position: fixed;
+    bottom: 200;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Style the button used to pause/play the video */
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    margin: auto;
+    
+}
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
+
