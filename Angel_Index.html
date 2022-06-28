@@ -26,13 +26,17 @@
   <script src ="OrbitControls.js"></script>
    <script type="module">
 
-    import {GLTFLoader} from "./GLTFLoader.js"
+    
+import {GLTFLoader} from "./GLTFLoader.js"
 
-let camera, scene, renderer, cube, clock, mixer, obj, light, delta, controls;
+let camera, scene, renderer, cube, clock, mixer, obj, light, delta, controls, test, raycaster, mouse;
 const manager = new THREE.LoadingManager();
 const loader = new GLTFLoader(manager);
+raycaster = new THREE.Raycaster();
+mouse = new THREE.Vector2();
 manager.onLoad = function () {
     console.log("DONE");
+    // = obj["children"][4]
     scene.background = new THREE.Color('#21282F');
     renderer.setAnimationLoop(animate);
     window.addEventListener('resize', onWindowResize, false);
@@ -44,9 +48,10 @@ function init() {
     clock = new THREE.Clock();
     loader.load('scene.gltf',
         function (gltf) {
-            obj = gltf.scene
+            console.log(gltf);
+            obj = gltf.scene;
             scene.add(obj);
-           // camera = gltf.cameras['0']; //if you have one camera or you need the first
+            // camera = gltf.cameras['0']; //if you have one camera or you need the first
             mixer = new THREE.AnimationMixer(gltf.scene);
             gltf.animations.forEach((clip) => {
                 mixer.clipAction(clip).play();
@@ -79,7 +84,7 @@ function init() {
         1000
     );
     // Position camera
-    camera.position.set(0, 2, 10);
+    camera.position.set(10, 10, 10);
 
     // Init renderer
     renderer = new THREE.WebGLRenderer({antialias: true});
@@ -130,7 +135,30 @@ function init() {
     // Add to scene
     //scene.add(cube);
 
+const pointLight = new THREE.PointLight(0xf21fff, 5)
+pointLight.position.x = 2
+pointLight.position.y = 3
+pointLight.position.z = 4
+scene.add(pointLight)
+
+// Objects
+const geometry = new THREE.SphereBufferGeometry(0.5, 64, 64)
+
+// Materials
+
+const material = new THREE.MeshStandardMaterial()
+material.metalness = 0.7
+material.roughness = 0.2
+
+material.color = new THREE.Color(0xff0000)
+
+// Mesh
+const sphere = new THREE.Mesh(geometry,material)
+scene.add(sphere)
+
+
 }
+
 
 function animate() {
     controls.update();
@@ -148,7 +176,26 @@ function onWindowResize() {
     // Reset size
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
+
 init();
+renderer.domElement.addEventListener('pointerup', (event) => {
+    mouse.x = (event.clientX / renderer.domElement.clientWidth - renderer.domElement.getBoundingClientRect().x) * 2 - 1;
+    mouse.y = -(event.clientY / renderer.domElement.clientHeight + renderer.domElement.getBoundingClientRect().y) * 2 + 1;
+
+    console.log(mouse.x, mouse.y);
+
+    raycaster.setFromCamera(mouse, camera);
+    //console.log(scene.children)
+    const intersects = raycaster.intersectObjects(scene.children, true);
+
+    if (intersects.length > 0) {
+        console.log(intersects)
+        if(intersects[0]["object"]["id"]===13){
+            alert("YOU CLICKED DA TEXT");
+        }
+        //console.log("Model clicked.")
+    }
+});
 
   
    </script>
