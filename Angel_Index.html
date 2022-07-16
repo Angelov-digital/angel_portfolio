@@ -15,6 +15,7 @@
   canvas{
 	display:block;
   z-index: 100;
+  
   }
     </style>
 
@@ -24,7 +25,7 @@
   <script src="three.js"></script>
   <script type="module" src="GLTFLoader.js"></script>
   <script src ="OrbitControls.js"></script>
-   <script type="module">
+  <script type="module">
 
     
 import {GLTFLoader} from "./GLTFLoader.js"
@@ -46,7 +47,7 @@ manager.onLoad = function () {
 function init() {
     scene = new THREE.Scene();
     clock = new THREE.Clock();
-    loader.load('scene.gltf',
+    loader.load('particles1.gltf',
         function (gltf) {
             console.log(gltf);
             obj = gltf.scene;
@@ -84,7 +85,7 @@ function init() {
         1000
     );
     // Position camera
-    camera.position.set(10, 10, 10);
+    camera.position.set(10, 1, 1);
 
     // Init renderer
     renderer = new THREE.WebGLRenderer({antialias: true});
@@ -135,27 +136,19 @@ function init() {
     // Add to scene
     //scene.add(cube);
 
-const pointLight = new THREE.PointLight(0xf21fff, 5)
+const pointLight = new THREE.PointLight(0xffffff, 5)
 pointLight.position.x = 2
 pointLight.position.y = 3
 pointLight.position.z = 4
 scene.add(pointLight)
 
 // Objects
-const geometry = new THREE.SphereBufferGeometry(0.5, 64, 64)
+
 
 // Materials
 
-const material = new THREE.MeshStandardMaterial()
-material.metalness = 0.7
-material.roughness = 0.2
-
-material.color = new THREE.Color(0xff0000)
 
 // Mesh
-const sphere = new THREE.Mesh(geometry,material)
-scene.add(sphere)
-
 
 }
 
@@ -196,9 +189,8 @@ renderer.domElement.addEventListener('pointerup', (event) => {
         //console.log("Model clicked.")
     }
 });
-
-  
    </script>
+
     <header class="header">
         <nav class="navbar">
             
@@ -208,7 +200,7 @@ renderer.domElement.addEventListener('pointerup', (event) => {
 
             <ul class="nav-menu">
                 <li class="nav-item">
-                  <a href="Angel_3D.html" class="nav-link">3D</a>
+                  <a href="Angel_3D.html" class="nav-link">3D freestyle</a>
                 </li>
                 <li class="nav-item">
                   <a href="Angel_architecture.html" class="nav-link">Architecture</a>
@@ -290,7 +282,7 @@ renderer.domElement.addEventListener('pointerup', (event) => {
 
         <a href="">
             <li class="container">
-              <img src="img/3D/Alsit and seraph scene effect3.jpg" alt="Avatar" class="image" style="width:100%">
+              <img src="img/3Dserviceicon.jpg" alt="Avatar" class="image" style="width:100%">
               <div class="middle">
                 <div class="text">3D</div>
               </div>

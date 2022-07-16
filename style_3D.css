@@ -21,6 +21,10 @@
         font-family: champagneit ;
         src: url(fonts/Champagne_Limousines-ThickItalic.ttf);
     }
+    @font-face {
+        font-family: archlight ;
+        src: url(fonts/RollandinEmilie.ttf);
+    }
 
 * {
     margin: 0;
@@ -64,12 +68,15 @@ h3 {
     padding-left: 45px;
     margin: 5px;
 }
-.category{
-    font-family: champagneit ;
+#categoryArch{
+    font-family: archlight ;
     font-size: 100px;
-    white-space: nowrap; 
-   
-    
+    white-space: nowrap;    
+}
+#category3D{
+    font-family: azonix ;
+    font-size: 100px;
+    white-space: nowrap;
 }
 .project-txt-overlay p{
     color: white;

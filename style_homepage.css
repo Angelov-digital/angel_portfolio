@@ -12,6 +12,10 @@
     @font-face {
         font-family: champagne ;
         src: url(fonts/Champagne_Limousines.ttf);
+    } 
+    @font-face {
+        font-family: archlight ;
+        src: url(fonts/RollandinEmilie.ttf);
     }
 
 
@@ -358,8 +362,7 @@ footer p{
       }
       .main_container{
         position: absolute;
-        top: -100px;
-        z-index: -10;
+        top: 100vh;
         width: 100%;
     
     

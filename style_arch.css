@@ -17,6 +17,10 @@
         font-family: champagne ;
         src: url(fonts/Champagne_Limousines.ttf);
     }
+    @font-face {
+        font-family: archlight ;
+        src: url(fonts/RollandinEmilie.ttf);
+    }
 
 * {
     margin: 0;
