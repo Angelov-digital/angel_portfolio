@@ -17,6 +17,14 @@
         font-family: champagne ;
         src: url(fonts/Champagne_Limousines.ttf);
     }
+    @font-face {
+        font-family: champagneit ;
+        src: url(fonts/Champagne_Limousines-ThickItalic.ttf);
+    }
+    @font-face {
+        font-family: archlight ;
+        src: url(fonts/RollandinEmilie.ttf);
+    }
 
 * {
     margin: 0;
@@ -42,9 +50,10 @@ p {
 }
 
 h2 {
-    font-family: expansiva;
+    font-family: champagneit;
     text-align: center;
-    margin: 10px;
+    margin: 30px;
+    font-weight:normal;
 }
 h3 {
     font-family: champagne;
@@ -52,6 +61,42 @@ h3 {
     margin: 5px;
     padding: 0px 50px;
     font-size: 20px;
+    
+}
+.title p{
+    font-size: 25px;
+    padding-left: 45px;
+    margin: 5px;
+}
+#categoryArch{
+    font-family: archlight ;
+    font-size: 100px;
+    white-space: nowrap;    
+}
+#category3D{
+    font-family: azonix ;
+    font-size: 100px;
+    white-space: nowrap;
+}
+.project-txt-overlay p{
+    color: white;
+    font-size: 20px;
+    padding: 10px 30px;
+    
+
+}
+.project-txt p{
+    margin: 10px 50px;
+}
+.project-txt h3{
+    font-size: 30px;
+    
+}
+.text {
+    color: white;
+    font-size: 20px;
+   
+    font-family: champagne;
 }
 
 
@@ -65,12 +110,10 @@ body {
 
 .project1{
     position: absolute;
+    width: 100%;
     top: 50px;
     z-index: -1;
 }
-
-
-
 
 #myVideo {
   display: block ;
@@ -145,12 +188,8 @@ body {
 }
 
 /* Style the Image Used to Trigger the Modal */
-#myImg {
-    cursor: pointer;
-    transition: 0.3s;
-  }
+
   
-  #myImg:hover {opacity: 0.7;}
   
   /* The Modal (background) */
   .modal {
@@ -232,12 +271,17 @@ body {
     }
   }
 
-.project-txt{
-    background-color: #7171716b;
-    padding: 10px;   
-}
+
 .title{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
     font-size: 20px;
+    align-items: center;
+}
+
+.spacerbot{
+    width: 100%;
+    height: 40px;
 }
 
 
@@ -366,23 +410,37 @@ body {
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         text-align: center;
+        transition: ease-out 0.3s;
+        box-shadow: inset 0 0 0 0 black;
   }
+    .middle:hover {
+        box-shadow: inset 0 0 0 0 black;
+
+    }
   
     .gallery_pics:hover .image {
-        opacity: 0.3;
-  }
-  
-    .gallery_pics:hover .middle {
         opacity: 1;
   }
   
-  
-    .text {
-        color: white;
-        font-size: 20px;
-        padding: 16px 32px;
-        font-family: champagne;
-  }
+   
+    .gallery_pics:hover .project-txt-overlay{
+        width: 400px;
+    }
+    .project-txt-overlay{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 20px;
+        height: 50px;
+        display: flex;
+        overflow: hidden;
+        transition: 0.7s ease;
+        z-index: 10;
+        background-color: #101010c5;
+        white-space: nowrap;
+        align-items: center;
+}
+    
     .content {
         position: fixed;
         bottom: 200;
