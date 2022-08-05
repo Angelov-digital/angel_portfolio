@@ -163,8 +163,7 @@ a:hover {
     font-size: 50px;
     text-align: right;
     z-index: 1;
-    color: #c8eba0;
-   
+    color: #c8eba0; 
 }
 .moto{
     position: absolute;
@@ -175,18 +174,22 @@ a:hover {
     font-family: adequate;
     font-size: 30px;
     text-align: center;
-    background-color: #10101065;
-    padding-right: 10vh;
+    background-color: #101010b6;
+   
 }
 .about{
   width: 70%;  
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  
+  border-radius: 7px;
 }
 .mytitle{
     font-family: adequate;
-    font-size: 40px;
+    font-size: 35px;
+    text-align: center;
+    color: #c8eba0;
 }
 .mytext{
     font-family: monsterat;
@@ -201,6 +204,7 @@ a:hover {
     padding-left: 10vh;
     padding-right: 10vh;
     margin-top: 1vh;
+    padding-bottom: 20px;
 }
 .frontend{
     position: relative;
@@ -208,6 +212,9 @@ a:hover {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 20px;
+    
+    border-radius: 7px;
 }
 .frontendtitle{
     font-family: adequate;
@@ -221,6 +228,9 @@ a:hover {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 20px;
+    
+    border-radius: 7px;
 }
 .skillstitle{
     position: relative;
@@ -238,6 +248,17 @@ a:hover {
     padding-left: 10vh;
     padding-right: 10vh;
     margin-top: 1vh;
+}
+.contact{
+    position: relative;
+    top: 150px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.spacer1{
+    height: 50px;
 }
 /*footer*/
 
@@ -257,8 +278,6 @@ footer p{
     text-align: center;
     top: 40%;
 }
-
-
 /*slideshow*/
   /* Caption text */
   .textc {
@@ -322,6 +341,9 @@ footer p{
 .active {
     background-color: #717171;
   }
+
+
+
 /*media*/
 @media only screen and (max-width: 1024px) {
     
@@ -336,8 +358,7 @@ footer p{
         flex-direction: column;
         width: 100%;
         text-align: center;
-        transition: 0.3s;
-        
+        transition: 0.3s;  
     }
     /*code style of hamburger menu from -  https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-hamburger-menu-using-html-css-and-javascript-4gci*/
     .nav-menu.active {
@@ -345,11 +366,9 @@ footer p{
         background-color: rgba(0, 0, 0, 0.85);
         z-index: 100;
     }
-
     .nav-item {
         margin: 2.5rem 0;
     }
-
     .hamburger {
         display: block;
         cursor: pointer;
@@ -358,11 +377,9 @@ footer p{
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
-
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
-
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
@@ -379,13 +396,137 @@ footer p{
         width: 100%;
         object-fit: cover;
         vertical-align: bottom;
-      }
+    }
+   
+/* main content styling */
     .main_container{
         position: absolute;
-        top: 50px;
-        z-index: -10;
+        top: 600px;
+        z-index: 1;
         width: 100%;
+       
     }
+    .designtitle{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        
+    }
+    .maintitle{
+        position: relative;
+        font-family: expansiva;
+        text-align: center;
+        font-size: 50px;
+        background-color: #10101065;
+        z-index: 10;
+        overflow: wrap;
+    }
+    .secondtitle{
+        position: relative;
+        top: 0px;
+        font-family: expansiva;
+        font-size: 30px;
+        text-align: right;
+        z-index: 1;
+        color: #c8eba0;
+        margin-right: 2vh; 
+    }
+    .moto{
+        position: absolute;
+        width: 100%;
+        top: -50px;
+        text-align: center;
+    }
+    .mototext{
+        font-family: adequate;
+        font-size: 18px;
+        text-align: center;
+        background-color: #101010b6;
+    }
+    .about{
+    position: relative;
+    top: -50px;
+      width: 100%;  
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0px;
+      border-radius: 7px;
+    }
+    .mytitle{
+        font-family: adequate;
+        font-size: 20px;
+        text-align: center;
+        color: #c8eba0;
+    }
+    .mytext{
+        font-family: monsterat;
+        font-size: 19px;
+        padding-left: 0vh;
+        padding-right: 0vh;
+        margin-top: 1vh;
+    }
+    .mytext2{
+        font-family: monsterat;
+        text-align: center;
+        font-size: 19px;
+        padding-top: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+       
+        background-color: #101010a6;
+    }
+    .frontend{
+        position: relative;
+        top: 50px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 20px;
+        
+        border-radius: 7px;
+    }
+    .frontendtitle{
+        font-family: adequate;
+        font-size: 40px;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .skills{
+        position: relative;
+        top: 100px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 20px; 
+        border-radius: 7px;
+    }
+    .skillstitle{
+        position: relative; 
+        font-family: adequate;
+        font-size: 40px;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .skillstext{
+        position: relative;
+        font-family: monsterat;
+        font-size: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 1vh;
+    }
+    .contact{
+        position: relative;
+        top: 150px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .spacer1{
+        height: 50px;
+    }
+            
 }
 
 @media only screen and (min-width: 1025px) {

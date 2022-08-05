@@ -110,12 +110,18 @@
             ]
         },
         {
+            "extras" : {
+                "MM" : {}
+            },
             "name" : "Object_6_6"
         },
         {
             "children" : [
                 4
             ],
+            "extras" : {
+                "MM" : {}
+            },
             "name" : "bakedInside_1_5",
             "rotation" : [
                 -0.49074459075927734,
@@ -253,8 +259,8 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "equi",
-            "uri" : "textures/equi.png"
+            "name" : "equi2",
+            "uri" : "textures/equi2.png"
         }
     ],
     "accessors" : [

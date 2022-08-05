@@ -10,7 +10,12 @@
 
     <style>
       body{
-	  margin:0;
+	    margin:0;
+        background-image: url(img/matrix.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.39)
   }
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap');
     </style>
@@ -206,16 +211,29 @@ renderer.domElement.addEventListener('pointerup', (event) => {
         //console.log("Model clicked.")
     }
 });
+
+var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+var rootElement = document.documentElement;
+
+function scrollToTop() {
+  // Scroll to top logic
+  rootElement.scrollTo({
+    top: 900,
+    behavior: "smooth"
+  });
+}
+scrollToTopBtn.addEventListener("click", scrollToTop);
+
 </script>
 
     <header class="header">
         <nav class="navbar">
             
-            <a href="#" class="nav-logo">Adam Angelov</a>
+            <a href="Angel_Index.html" class="nav-logo">Adam Angelov</a>
             
             <ul class="nav-menu">
                 <li class="nav-item">  
-                    <a href="" class="nav-link">Frontend Dev.</a>
+                    <a id="scrollToTopBtn" class="nav-link">Frontend Dev.</a>
                 </li>
                 <li class="nav-item">
                   <a href="Angel_architecture.html" class="nav-link">Architecture</a>
@@ -238,6 +256,7 @@ renderer.domElement.addEventListener('pointerup', (event) => {
     </header>
 
     <section class="main_container">
+        <div class="spacer1"></div>
         <div class="designtitle">
             <p class="maintitle">ANGELOV</p>
             <p class="secondtitle">_design</p>
@@ -246,12 +265,12 @@ renderer.domElement.addEventListener('pointerup', (event) => {
             <p class="mototext"> Frontend _ 3D _ Architecture _ Art </p>
         </div>
         <div class="about">
-            <p class="mytitle">Welcome to my webpage,</p>
-            <p class="mytext2">Iam a student of frontend development, architecture, 3D enthusiast and highly creative person with interest in arts and design.</p>
+            <p class="mytitle">_ Welcome to my digital place in the network _</p>
+            <p class="mytext2">I am a student of frontend development, architecture, 3D enthusiast and highly creative person with interest in arts and design.</p>
         </div>
         <div class="frontend">
             <p class="frontendtitle">- Frontend -</p>
-            <p class="mytext">Webpages from scratch, professional solutions for companies and individuals to make them visible accros the network to boost their sales, enhance user eperience in cretive way with innovations.</p>
+            <p class="mytext">Webpages from scratch, professional solutions for individuals and companies to make them visible accros the network to boost their sales, enhance user eperience in cretive way with innovations.</p>
             <p class="mytext">I am using new technologies and approach to attract, and communicate with a user, to boost his experience and enhance ease of use of a desired webpage.</p>
         </div>
         <div class="skills">
@@ -260,9 +279,13 @@ renderer.domElement.addEventListener('pointerup', (event) => {
             <p class="skillstext">- Adobe creative suite: Photoshop, Indesign, Illustrator, Aftereffects, Lightroom</p>
             <p class="skillstext">- 3D programs: Blender, Z-brush, 3ds MAX</p>
             <p class="skillstext">- CAD CAM programs: Rhinoceros 6.0, Autocad </p>
-            <p class="skillstext">- Fabrication: 3D print, milling cutter, laser cutter</p>
-            
+            <p class="skillstext">- Fabrication: 3D print, milling cutter, laser cutter</p>  
         </div>
+        <div class="contact">
+            <p class="mytext">adamangelo.osvc@gmail.com</p>
+            <p class="mytext">+45 50 16 90 29</p>
+        </div>
+
         <footer>  
             <p>© Adam Angelov 2022</p>
         </footer>
