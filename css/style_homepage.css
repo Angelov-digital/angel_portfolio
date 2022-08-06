@@ -198,6 +198,14 @@ a:hover {
     padding-right: 10vh;
     margin-top: 1vh;
 }
+.mytextsel{
+    font-family: monsterat;
+    font-size: 20px;
+    padding-left: 10vh;
+    padding-right: 10vh;
+    margin-top: 1vh;
+    color: #ffffff;  
+}
 .mytext2{
     font-family: monsterat;
     font-size: 25px;
@@ -229,12 +237,10 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 20px;
-    
     border-radius: 7px;
 }
 .skillstitle{
-    position: relative;
-    
+    position: relative; 
     font-family: adequate;
     font-size: 40px;
     text-align: center;
@@ -242,12 +248,20 @@ a:hover {
 }
 .skillstext{
     position: relative;
-    
+    font-family: monsterat;
+    font-size: 20px;
+    padding-left: 15vh;
+    padding-right: 10vh;
+    margin-top: 1vh;
+}
+.skillstextsel{
+    position: relative;
     font-family: monsterat;
     font-size: 20px;
     padding-left: 10vh;
-    padding-right: 10vh;
+    padding-right: 5vh;
     margin-top: 1vh;
+    color: #c8eba0;
 }
 .contact{
     position: relative;
@@ -444,13 +458,13 @@ footer p{
         background-color: #101010b6;
     }
     .about{
-    position: relative;
-    top: -50px;
-      width: 100%;  
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 0px;
-      border-radius: 7px;
+        position: relative;
+        top: -50px;
+        width: 100%;  
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        border-radius: 7px;
     }
     .mytitle{
         font-family: adequate;
@@ -465,6 +479,14 @@ footer p{
         padding-right: 0vh;
         margin-top: 1vh;
     }
+    .mytextsel{
+        font-family: monsterat;
+        font-size: 20px;
+        padding-left: 10vh;
+        padding-right: 10vh;
+        margin-top: 1vh;
+        color: #ffffff;  
+    }
     .mytext2{
         font-family: monsterat;
         text-align: center;
@@ -477,33 +499,36 @@ footer p{
     }
     .frontend{
         position: relative;
-        top: 50px;
-        width: 80%;
+        top: 90px;
+        width: 90%;
+        text-align: center;
         margin-left: auto;
         margin-right: auto;
         padding-bottom: 20px;
-        
         border-radius: 7px;
+        background-color: rgba(16, 16, 16, 0.74);
     }
     .frontendtitle{
         font-family: adequate;
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
         margin-top: 10px;
     }
     .skills{
         position: relative;
         top: 100px;
-        width: 80%;
+        width: 90%;
+        text-align: center;
         margin-left: auto;
         margin-right: auto;
         padding-bottom: 20px; 
         border-radius: 7px;
+        background-color: rgba(16, 16, 16, 0.74);
     }
     .skillstitle{
         position: relative; 
         font-family: adequate;
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
         margin-top: 10px;
     }
@@ -515,10 +540,19 @@ footer p{
         padding-right: 0;
         margin-top: 1vh;
     }
+    .skillstextsel{
+        position: relative;
+        font-family: monsterat;
+        font-size: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 1vh;
+        color: #c8eba0;
+    }
     .contact{
         position: relative;
         top: 150px;
-        width: 50%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
