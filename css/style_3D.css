@@ -77,7 +77,7 @@ h3 {
     text-align: left;
     padding: 4px 50px;
     font-size: 20px;
-    background-color: rgba(255, 255, 255, 0.212);  
+    background-image: linear-gradient(to right, rgb(126, 126, 126) , rgba(0, 0, 0, 0));
 }
 #categoryArch{
     font-family: archlight ;
@@ -90,7 +90,7 @@ h3 {
     white-space: nowrap;
 }
 .project-txt {
-   background-color: rgb(31, 31, 31);
+   background-image: linear-gradient(to right, rgb(58, 58, 58) , rgba(0, 0, 0, 0));
 }
 .project-txt-overlay p{
     color: white;
@@ -98,10 +98,12 @@ h3 {
     padding: 10px 30px;
 }
 .project-txt p{
-    margin: 5px 50px;
+    margin: 0px 50px;
+    padding:  3px;
 }
 .project-txt h3{
-    font-size: 30px;  
+    font-size: 30px;
+    
 }
 .text {
     color: white;
