@@ -197,7 +197,7 @@ a:hover {
   .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 999; /* Sit on top */
+    z-index: 20; /* Sit on top */
     padding-top: 50px; /* Location of the box */
     left: 0;
     top: 0;
@@ -218,6 +218,14 @@ a:hover {
   
   /* Modal Content (Image) */
   .modal-content {
+    margin: auto;
+    display: block;
+    
+    max-height: 100%;
+    max-width: 1600px;
+  }
+  /* Modal Content (Image) */
+  .modal-content_vert {
     margin: auto;
     display: block;
     width: 100%;
@@ -402,7 +410,17 @@ a:hover {
         color: #f1f1f1;
         width: 100%;
         padding: 20px;
-  } 
+    }
+    .gallery_pics {
+        max-height: 40vh;
+        flex-grow: 1;
+        position: relative;
+           
+    }
+    #video{
+        display: block;
+        max-width: 100%;
+    } 
   /*footer*/
     .footer{
         display: grid;
@@ -420,8 +438,6 @@ a:hover {
         font-size: 15px;
         padding: 0 ;
   }
-    
-    
 }
 
 @media only screen and (min-width: 1025px) {
@@ -429,7 +445,6 @@ a:hover {
     
     .image_wrapper {
         position: relative;
-        
         display: flex;
         flex-wrap: wrap;
       }
@@ -445,7 +460,7 @@ a:hover {
     .gallery_pics {
         height: 40vh;
         flex-grow: 1;
-        position: relative;
+        position: relative;       
   }
     
     .image {
@@ -457,6 +472,7 @@ a:hover {
         backface-visibility: hidden;
         max-height: 100%;
         min-width: 100%;
+        max-width: 100%;
         object-fit: cover;
   }
     .middle {

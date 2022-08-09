@@ -4,39 +4,257 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="style_homepage.css">
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-    <title>Adam Angelov</title>
+    <link rel="stylesheet" href="/css/style_homepage.css">
+    <link rel="stylesheet" href="/css/style.scss">
+    <link rel="shortcut icon" type="image/jpg" href="img/AngelFavicon.jpg"/>
+    <title>Angelov Design</title>
 
     <style>
+      body{
+	    margin:0;
+        background-image: url(img/matrixwhite.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.39)
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap');
     </style>
 
 </head>
 
 <body>
+  <script src="three.js"></script>
+  <script type="module" src="GLTFLoader.js"></script>
+  <script src ="OrbitControls.js"></script>
+  <script type="module">
+
+    
+import {GLTFLoader} from "./GLTFLoader.js"
+
+let camera, scene, renderer, cube, clock, mixer, obj, light, delta, controls, test, raycaster;
+const manager = new THREE.LoadingManager();
+const loader = new GLTFLoader(manager);
+
+raycaster = new THREE.Raycaster();
+
+const mouse = new THREE.Vector2();
+const target = new THREE.Vector2();
+
+
+manager.onLoad = function () {
+    console.log("DONE");
+    // = obj["children"][4]
+    scene.background = new THREE.Color('#FFFFFF');
+    renderer.setAnimationLoop(animate);
+    window.addEventListener('resize', onWindowResize, false);
+};
+
+const windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );
+
+function init() {
+
+     // Init camera (PerspectiveCamera)
+     camera = new THREE.PerspectiveCamera(
+        80,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+    );
+     // Position camera
+     camera.position.set(8, -5, -5);
+
+    //camera moove on hover
+    function onMouseMove( event ) {
+
+    mouse.x = ( event.clientX - windowHalf.x );
+    mouse.y = ( event.clientY - windowHalf.x );
+  }
+   
+    scene = new THREE.Scene();
+
+    clock = new THREE.Clock();
+
+    loader.load(
+      '/model/test.gltf',
+        function (gltf) {
+            console.log(gltf);
+            obj = gltf.scene;
+            scene.add(obj);
+            // camera = gltf.cameras['0']; //if you have one camera or you need the first
+            mixer = new THREE.AnimationMixer(gltf.scene);
+            gltf.animations.forEach((clip) => {
+                mixer.clipAction(clip).play();
+            });
+            gltf.animations; // Array<THREE.AnimationClip>
+            gltf.scene; // THREE.Group
+            gltf.scenes; // Array<THREE.Group>
+            gltf.cameras; // Array<THREE.Camera>
+            gltf.asset; // Object
+
+        },
+        // called while loading is progressing
+        function (xhr) {
+            console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+        },
+        // called when loading has errors
+        function (error) {
+
+            console.log('An error happened');
+
+        }
+    );
+ 
+
+    // Init renderer
+    renderer = new THREE.WebGLRenderer({antialias: true});
+
+    document.addEventListener( 'mousemove', onMouseMove, false );
+
+    // Set size (whole window)
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    //Render light/shadows from gltf file
+    renderer.physicallyCorrectLights = true;
+    renderer.shadowMap.enabled = true;
+
+    // Render to canvas element
+    document.body.appendChild(renderer.domElement);
+  
+    //Add mouse control to camera
+    controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.2;
+    controls.keys = {
+        LEFT: 'ArrowLeft', //left arrow
+        UP: 'ArrowUp', // up arrow
+        RIGHT: 'ArrowRight', // right arrow
+        BOTTOM: 'ArrowDown' // down arrow
+    }
+    //Auto rotate camera
+    /*controls.autoRotate = true;
+    controls.autoRotateSpeed *= -1;*/ //rotate anti clockwise
+
+    //light = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
+    //scene.add(light);
+
+    // Init BoxGeometry object (rectangular cuboid)
+    //const geometry = new THREE.BoxGeometry(3, 3, 3);
+
+    // Create material with color
+    //const material = new THREE.MeshBasicMaterial({color: 0x0000ff});
+
+    // Add texture -
+    // const texture = new THREE.TextureLoader().load('textures/crate.gif');
+
+    // Create material with texture
+    // const material = new THREE.MeshBasicMaterial({ map: texture });
+
+    // Create mesh with geo and material
+    //cube = new THREE.Mesh(geometry, material);
+
+    // Add to scene
+    //scene.add(cube);
+
+const pointLight = new THREE.PointLight(0xffffff, 5)
+pointLight.position.x = 2
+pointLight.position.y = 3
+pointLight.position.z = 4
+scene.add(pointLight)
+// Objects
+// Materials
+// Mesh
+}
+function animate() {
+//camera move on hover
+  camera.rotation.x += 0.01 * ( target.y - camera.rotation.x );
+  camera.rotation.y += 0.01 * ( target.x - camera.rotation.y );
+
+  target.x = ( 1 - mouse.x ) * 0.002;
+  target.y = ( 1 - mouse.y ) * 0.002;
+//camera move on hover end
+    
+
+    controls.update();
+    obj.rotation.y -= 0.001
+    delta = clock.getDelta();
+    mixer.update(delta);
+    renderer.render(scene, camera);
+    
+    
+}
+
+function onWindowResize() {
+    // Camera frustum aspect ratio
+    camera.aspect = window.innerWidth / window.innerHeight;
+    // After making changes to aspect
+    camera.updateProjectionMatrix();
+    // Reset size
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+init();
+renderer.domElement.addEventListener('pointerup', (event) => {
+    mouse.x = (event.clientX / renderer.domElement.clientWidth - renderer.domElement.getBoundingClientRect().x) * 2 - 1;
+    mouse.y = -(event.clientY / renderer.domElement.clientHeight + renderer.domElement.getBoundingClientRect().y) * 2 + 1;
+
+    console.log(mouse.x, mouse.y);
+
+    raycaster.setFromCamera(mouse, camera);
+    //console.log(scene.children)
+    const intersects = raycaster.intersectObjects(scene.children, true);
+
+    if (intersects.length > 0) {
+        console.log(intersects)
+        if(intersects[0]["object"]["id"]===13){
+            alert("YOU CLICKED DA TEXT");
+        }
+        //console.log("Model clicked.")
+    }
+});
+
+var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+var rootElement = document.documentElement;
+
+function scrollToTop() {
+  // Scroll to top logic
+  rootElement.scrollTo({
+    top: 900,
+    behavior: "smooth"
+  });
+}
+scrollToTopBtn.addEventListener("click", scrollToTop);
+
+
+
+</script>
+<!--
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+-->
     <header class="header">
         <nav class="navbar">
             
-
             <a href="index.html" class="nav-logo">Adam Angelov</a>
             
-
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="Angel_art.html" class="nav-link">Art</a>
+                <li class="nav-item">  
+                    <a id="scrollToTopBtn" class="nav-link">Frontend Dev.</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Angel_design_gallery.html" class="nav-link">Design</a>
+                  <a href="Angel_architecture.html" class="nav-link">Architecture</a>
+                <li class="nav-item">
+                    <a href="Angel_3D.html" class="nav-link">3D</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Angel_multimedia_gallery.html" class="nav-link">Multimedia</a>
+                    <a href="Angel_design.html" class="nav-link">Design</a>
                 </li>
+              <!--
                 <li class="nav-item">
-                    <a href="Angel_architecture.html" class="nav-link">Architecture</a>
-                </li>
-                <li class="nav-item">
-                    <a href="Angel_about.html" class="nav-link">About</a>
-                </li>    
+                  <a href="Angel_art.html" class="nav-link">Art</a>
+                </li> 
+              --> 
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -46,105 +264,66 @@
         </nav>
     </header>
 
-        <section class="main_container">
-            
-            <ul class="content_wrapper">
-                <li class="container2">
-                    <img src="img/vtol2.jpg" alt="Avatar" class="image" style="width:100%">
-                    <p class="moto">Visions trough Art</p>
-                </li>
+    <section class="main_container">
+        <div class="spacer1"></div>
+        <div class="designtitle">
+            <p class="maintitle">ANGELOV</p>
+            <p class="secondtitle">_design</p>
+        </div>
+        <div class="moto">
+            <p class="mototext"> Frontend _ 3D _ Architecture _ Art </p>
+        </div>
+        <div class="about">
+            <p class="mytitle">_ Welcome to my digital place in the network _</p>
+            <p class="mytext2">I am a student of frontend development, architecture, 3D enthusiast and highly creative person with interest in arts and design.</p>
+        </div>
+        <div class="frontend">
+            <p class="frontendtitle">- Frontend -</p>
+            <p class="mytext">Webpages from scratch, professional solutions for individuals and companies to make them visible accros the network to boost their sales, enhance user eperience in cretive way with innovations.</p>
+            <p class="mytext">I am using new technologies and approach to attract, and communicate with a user, to boost his experience and enhance ease of use of a desired webpage.</p>
+        </div>
+        <div class="skills">
+            <p class="skillstitle">- Skills -</p>
+            <p class="skillstextsel">- Web technology:</p><p class="skillstext">html, css, javascript</p>
+            <p class="skillstextsel">- Adobe creative suite:</p><p class="skillstext">Photoshop, Indesign, Illustrator, Aftereffects, Lightroom</p>
+            <p class="skillstextsel">- 3D programs:</p><p class="skillstext">Blender, Z-brush, 3ds MAX</p>
+            <p class="skillstextsel">- CAD, CAM programs:</p><p class="skillstext">Rhinoceros 6.0, Autocad </p>
+            <p class="skillstextsel">- Fabrication, prototyping:</p><p class="skillstext">3D print, milling cutter, laser cutter</p>  
+        </div>
+        <div class="contact">
+            <p class="contacttextsel">- Contact -</p>
+            <p class="mytextsel">adamangelo.osvc@gmail.com</p>
+            <p class="mytextsel">+45 50 16 90 29</p>
+        </div>
 
-                <a href="Angel_art.html">
-                  <li class="container">
-                    <img src="img/art/Heavy dream.png" alt="Avatar" class="image" style="width:100%">
-                    <div class="middle">
-                      <div class="text">Digital paint</div>
-                    </div>
-                  </a>
-                </li>
-                
-                <a href="Angel_architecture.html">
-                  <li class="container">
-                    <img src="img/arch/repo1.jpg" alt="Avatar" class="image" style="width:100%">
-                    <div class="middle">
-                      <div class="text">Architectural Visualizations</div>
-                    </div>
-                  </a>
-                </li>
-                
+        <div class="more">
+            <a href="Angel_3D.html" id="morebutton" class="morebutton">
+                show more
+            </a>
+        </div>
 
-                <a href="Angel_design_gallery.html">
-                  <li class="container">
-                    <img src="img/design/future/pozadi3_2xseda.jpg" alt="Avatar" class="image" style="width:100%">
-                    <div class="middle">
-                      <div class="text">Product Art</div>
-                    </div>
-                  </a>
-                </li>
-                
-                <a href="Angel_multimedia_gallery.html">
-                  <li class="container">
-                    <img src="img/design/ecocover/fragmented.gif" alt="Avatar" class="image" style="width:100%">
-                    <div class="middle">
-                      <div class="text">Multimedia Design</div>
-                    </div>
-                  </a>
-                </li>
-                
-                
-                <a href="Angel_design_gallery.html">
-                  <li class="container">
-                    <img src="img/Alsit and seraph scene effect3.jpg" alt="Avatar" class="image" style="width:100%">
-                    <div class="middle">
-                      <div class="text">Design</div>
-                    </div>
-                  </a>
-                </li>                
-            </ul>
-            
-        </section>
         <footer>  
-          <p>© Adam Angelov 2021</p>
+            <p>© Adam Angelov 2022</p>
         </footer>
         
+    </section>
+
+
+  
+    
         
-        <script>
-            const hamburger = document.querySelector(".hamburger");
-            const navMenu = document.querySelector(".nav-menu");
 
-            hamburger.addEventListener("click", mobileMenu);
 
-            function mobileMenu() {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-}
-            const navLink = document.querySelectorAll(".nav-link");
 
-            navLink.forEach(n => n.addEventListener("click", closeMenu));
 
-            function closeMenu() {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-
-}
-        // Get the video
-            var video = document.getElementById("myVideo");
-
-// Get the button
-            var btn = document.getElementById("myBtn");
-
-// Pause and play the video, and change the button text
-            function myFunction() {
-                if (video.paused) {
-                video.play();
-                btn.innerHTML = "Pause";
-                } else {
-                video.pause();
-                btn.innerHTML = "Play";
-  }
-}
-
+        
+        
+        
+        <script src="js-index.js">
+            
         </script>
+
+
         <!---script taken from this site-link below. I wanted that hamburger menu...
         https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-hamburger-menu-using-html-css-and-javascript-4gci 
         -->

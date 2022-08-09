@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="/css/style_homepage.css">
+    <link rel="stylesheet" href="/css/style.scss">
     <link rel="shortcut icon" type="image/jpg" href="img/AngelFavicon.jpg"/>
     <title>Angelov Design</title>
 
     <style>
       body{
 	    margin:0;
-        background-image: url(img/matrix.jpg);
+        background-image: url(img/matrixwhite.jpg);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
@@ -224,8 +225,14 @@ function scrollToTop() {
 }
 scrollToTopBtn.addEventListener("click", scrollToTop);
 
-</script>
 
+
+</script>
+<!--
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+-->
     <header class="header">
         <nav class="navbar">
             
@@ -275,15 +282,22 @@ scrollToTopBtn.addEventListener("click", scrollToTop);
         </div>
         <div class="skills">
             <p class="skillstitle">- Skills -</p>
-            <p class="skillstextsel">- Web technology and languages:</p><p class="skillstext">html, css, javascript</p>
+            <p class="skillstextsel">- Web technology:</p><p class="skillstext">html, css, javascript</p>
             <p class="skillstextsel">- Adobe creative suite:</p><p class="skillstext">Photoshop, Indesign, Illustrator, Aftereffects, Lightroom</p>
             <p class="skillstextsel">- 3D programs:</p><p class="skillstext">Blender, Z-brush, 3ds MAX</p>
             <p class="skillstextsel">- CAD, CAM programs:</p><p class="skillstext">Rhinoceros 6.0, Autocad </p>
             <p class="skillstextsel">- Fabrication, prototyping:</p><p class="skillstext">3D print, milling cutter, laser cutter</p>  
         </div>
         <div class="contact">
+            <p class="contacttextsel">- Contact -</p>
             <p class="mytextsel">adamangelo.osvc@gmail.com</p>
             <p class="mytextsel">+45 50 16 90 29</p>
+        </div>
+
+        <div class="more">
+            <a href="Angel_architecture.html" id="morebutton" class="morebutton">
+                show more
+            </a>
         </div>
 
         <footer>  
@@ -303,7 +317,9 @@ scrollToTopBtn.addEventListener("click", scrollToTop);
         
         
         
-        <script src="js-index.js"></script>
+        <script src="js-index.js">
+            
+        </script>
 
 
         <!---script taken from this site-link below. I wanted that hamburger menu...

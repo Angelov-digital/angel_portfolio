@@ -43,7 +43,49 @@
     }
     
 
-
+    .loader-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #242f3f;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 200;
+      }
+      .loader {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        border: 4px solid #Fff;
+        animation: loader 2s infinite ease;
+      }
+      .loader-inner {
+        vertical-align: top;
+        display: inline-block;
+        width: 100%;
+        background-color: #fff;
+        animation: loader-inner 2s infinite ease-in;
+      }
+      
+      @keyframes loader {
+        0% { transform: rotate(0deg);}
+        25% { transform: rotate(180deg);}
+        50% { transform: rotate(180deg);}
+        75% { transform: rotate(360deg);}
+        100% { transform: rotate(360deg);}
+      }
+      
+      @keyframes loader-inner {
+        0% { height: 0%;}
+        25% { height: 0%;}
+        50% { height: 100%;}
+        75% { height: 100%;}
+        100% { height: 0%;}
+      }
 
 * {
     margin: 0;
@@ -116,7 +158,7 @@ canvas{
     margin-left: 5rem;
 }
 
-a {
+.nav-link {
     font-size: 1.4rem;
     font-family: expansiva;
     box-shadow: inset 0 0 0 0 #ffffff;
@@ -125,7 +167,7 @@ a {
     padding: 5px;
 }
 /*effects*/
-a:hover {
+.nav-link:hover {
     box-shadow: inset 160px 0 0 0 #ffffff;
     color: rgb(0, 0, 0);
   }
@@ -270,6 +312,35 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+.contacttextsel{
+    position: relative;
+    top: 0;
+    font-family: monsterat;
+    font-size: 30px;
+    color: #c8eba0;
+}
+.more{
+   position: relative;
+   text-align: center;
+}
+#morebutton{
+    position: relative;
+    top: 250px;
+    font-size: 20px;
+    font-family:expansiva;
+    border-style: solid;
+    border-width: 1px;
+    border-color:#c8eba0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;  
+    transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
+}
+#morebutton:hover{
+    box-shadow: inset 220px 0 0 0 #ffffff;
+    color: rgb(0, 0, 0);
 }
 .spacer1{
     height: 50px;

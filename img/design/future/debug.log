@@ -1,4 +1,0 @@
-[1215/120422.698:WARNING:dns_config_service_win.cc(668)] Failed to read DnsConfig.
-[1215/170134.801:WARNING:dns_config_service_win.cc(668)] Failed to read DnsConfig.
-[1215/173348.059:ERROR:browser_gpu_channel_host_factory.cc(139)] Failed to launch GPU process.
-[1216/165438.504:ERROR:local_storage_context_mojo.cc(706)] Lost connection to database
