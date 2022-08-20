@@ -412,11 +412,15 @@ a:hover {
         padding: 20px;
     }
     .gallery_pics {
-        max-height: 40vh;
         flex-grow: 1;
-        position: relative;
-           
+        position: relative;     
     }
+    .project-txt-overlay p{
+        color: white;
+        font-size: 18px;
+        padding: 5px 30px;
+    }
+    
     #video{
         display: block;
         max-width: 100%;
