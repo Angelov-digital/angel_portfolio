@@ -41,7 +41,6 @@
         font-family: monsterat ;
         src: url(fonts/Montserrat-ExtraLight.ttf);
     }
-    
 
     .loader-wrapper {
         width: 100%;
@@ -49,11 +48,11 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #242f3f;
+        background-color: #151515;
         display:flex;
         justify-content: center;
         align-items: center;
-        z-index: 200;
+        z-index: 100;
       }
       .loader {
         display: inline-block;
@@ -193,7 +192,7 @@ canvas{
 .maintitle{
     position: relative;
     font-family: expansiva;
-    font-size: 150px;
+    font-size: 50px;
     background-color: #10101065;
     padding-left: 2vh;
     z-index: 1;
@@ -205,18 +204,41 @@ canvas{
     font-size: 50px;
     text-align: right;
     z-index: 1;
-    color: #c8eba0; 
+    /*color: #c8eba0;*/ 
+}
+.motowrapper{
+    position: relative;
+    top: -40vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-content: right;
+    width: 100%;
+   
 }
 .moto{
-    position: absolute;
-    width: 100%;
-    top: -20vh;
+    position: relative;
+    right: 0;
+    
+    
 }
 .mototext{
     font-family: adequate;
-    font-size: 30px;
-    text-align: center;
+    font-size: 40px;
+    text-align: left;
     background-color: #101010b6;
+    padding-right: ;
+    padding-left: ;
+    overflow: hidden;
+   
+}
+.mototext2{
+    font-family: adequate;
+    font-size: 20px;
+    text-align: left;
+    background-color: #101010b6;
+    padding-right: 100px;
+    padding-left: 100px;
+    overflow: hidden;
    
 }
 .about{

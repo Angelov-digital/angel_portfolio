@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="/css/style_homepage.css">
     <link rel="stylesheet" href="/css/style.scss">
     <link rel="shortcut icon" type="image/jpg" href="img/AngelFavicon.jpg"/>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Angelov Design</title>
 
     <style>
       body{
 	    margin:0;
-        background-image: url(img/matrixwhite.jpg);
+        background-image: url(img/matrixwhite.jp);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
@@ -226,21 +229,25 @@ function scrollToTop() {
 scrollToTopBtn.addEventListener("click", scrollToTop);
 
 
+$(window).on("load",function(){
+        $(".loader-wrapper").fadeOut("slow");
+      });
 
 </script>
-<!--
+
+
 <div class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
 </div>
--->
+
     <header class="header">
         <nav class="navbar">
             
-            <a href="index.html" class="nav-logo">Adam Angelov</a>
+            <a href="index.html" class="nav-logo">Home</a>
             
             <ul class="nav-menu">
                 <li class="nav-item">  
-                    <a id="scrollToTopBtn" class="nav-link">Frontend Dev.</a>
+                    <a id="scrollToTopBtn" class="nav-link">About me</a>
                 </li>
                 <li class="nav-item">
                   <a href="Angel_architecture.html" class="nav-link">Architecture</a>
@@ -267,12 +274,29 @@ scrollToTopBtn.addEventListener("click", scrollToTop);
     <section class="main_container">
         <div class="spacer1"></div>
         <div class="designtitle">
-            <p class="maintitle">ANGELOV</p>
-            <p class="secondtitle">_design</p>
+            <p class="maintitle">Adam Angelov</p>
+            <p class="secondtitle"></p>
+        </div>
+
+    <section class="motowrapper">
+
+        <div class="moto">
+            <p class="mototext">Design</p> 
+            <p class="mototext2">invented by</p>
         </div>
         <div class="moto">
-            <p class="mototext"> Frontend _ 3D _ Architecture _ Art </p>
+            <p class="mototext">Creativity</p>
+            <p class="mototext2">developed with</p>
         </div>
+        <div class="moto">
+            <p class="mototext">Precision</p>
+        </div>
+        <div class="moto">
+            <p class="mototext"></p>
+        </div>
+
+    </section>
+
         <div class="about">
             <p class="mytitle">_ Welcome to my digital place on the network _</p>
             <p class="mytext2">I am a student of frontend development, architecture, 3D enthusiast and highly creative person with interest in arts and design.</p>
@@ -317,11 +341,8 @@ scrollToTopBtn.addEventListener("click", scrollToTop);
 
 
         
-        
-        
-        <script src="js-index.js">
-            
-        </script>
+    <script src="jquery-3.6.1.js"></script>
+    <script src="js-index.js"></script>
 
 
         <!---script taken from this site-link below. I wanted that hamburger menu...
