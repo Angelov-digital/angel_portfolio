@@ -103,7 +103,7 @@ a {
     color: inherit;
 }
 body {
-    background-color: #101010;
+    background-color: #ffffff;
     color: #ffffff;
     background-repeat:no-repeat;
     background-position:center center fixed; 
@@ -192,55 +192,145 @@ canvas{
 .maintitle{
     position: relative;
     font-family: expansiva;
-    font-size: 50px;
+    text-align: center;
+    font-size: 40px;
     background-color: #10101065;
-    padding-left: 2vh;
+    padding-left: 0vh;
     z-index: 1;
 }
 .secondtitle{
     position: relative;
-    top: -60px;
+    top:0px;
     font-family: expansiva;
-    font-size: 50px;
+    color: #101010;
+    font-size: 30px;
     text-align: right;
     z-index: 1;
     /*color: #c8eba0;*/ 
 }
-.motowrapper{
+.motowrapper1{
     position: relative;
-    top: -40vh;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    
     justify-content: right;
-    width: 100%;
+    padding-left: 0vh;
    
 }
-.moto{
+.motowrapper2{
     position: relative;
-    right: 0;
     
+    justify-content: right;
+    padding-left: 0vh;
+   
+}
+
+#motodiv1{
+    animation: mymove 2s;
+    position: relative;
+    width: 300px;
+    padding-left: 0px;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
     
 }
+@keyframes mymove {
+    from {right: 400px;}
+    to {right: 0px;}
+  }
+
+#motodiv2{
+    animation: mymove2 2s;
+    position: relative;
+    width: 100%;
+    padding-left: 100px;
+    animation-timing-function: ease-out;
+   
+}
+@keyframes mymove2 {
+    from {left: 400px;}
+    to {left: 0px;}
+  }
 .mototext{
     font-family: adequate;
-    font-size: 40px;
+    font-size: 30px;
     text-align: left;
     background-color: #101010b6;
-    padding-right: ;
-    padding-left: ;
     overflow: hidden;
-   
+    padding-left: 20px;
 }
 .mototext2{
     font-family: adequate;
-    font-size: 20px;
+    font-size: 15px;
     text-align: left;
     background-color: #101010b6;
-    padding-right: 100px;
-    padding-left: 100px;
-    overflow: hidden;
-   
+    padding-left: 10px;
+    overflow: hidden;  
 }
+
+
+/*Gallery Projects*/
+
+.projectswrapper{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.image_wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .gallery_pics {
+    height: 40vh;
+    flex-grow: 1;
+    position: relative;
+    padding: 10px; 
+    margin: 10px;      
+}
+
+.gallery_pics:hover .image {
+    opacity: 0.7;
+    transition: 0.3s ease-in; 
+}
+
+#motodiv1{
+    animation: mymove 2s;
+    position: relative;
+    width: 300px;
+    padding-left: 0px;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    
+}
+@keyframes projectdetails {
+    from {right: 400px;}
+    to {right: 0px;}
+  }
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.image:hover {
+    cursor: pointer;
+   
+  }
+
+
+
+
+
+
+
 .about{
   width: 70%;  
   margin-left: auto;
@@ -599,7 +689,7 @@ footer p{
         margin-right: auto;
         padding-bottom: 20px;
         border-radius: 7px;
-        background-color: rgba(16, 16, 16, 0.74);
+       
     }
     .frontendtitle{
         font-family: adequate;

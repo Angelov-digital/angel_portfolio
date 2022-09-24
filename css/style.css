@@ -1,0 +1,221 @@
+@font-face {
+    font-family: geniso;
+    src: url(fonts/GENISO.ttf);
+    font-weight: light;
+
+}
+
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #151515;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+  }
+  .loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+  }
+  
+  @keyframes loader {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+  }
+  
+  @keyframes loader-inner {
+    0% { height: 0%;}
+    25% { height: 0%;}
+    50% { height: 100%;}
+    75% { height: 100%;}
+    100% { height: 0%;}
+  }
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html {
+font-size: 62.5%;
+font-family: geniso;
+}
+li {
+list-style: none;
+}
+a {
+text-decoration: none;
+color: inherit;
+}
+body {
+background-color: #ffffff;
+color: #ffffff;
+background-repeat:no-repeat;
+background-position:center center fixed; 
+max-width: 100%; 
+z-index: 0;
+}
+
+
+/*navigation*/
+.header{
+    position: sticky;
+    right: 0px;
+    top: 0px;
+    z-index: 100;   
+}
+.navbar {
+    position: fixed;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 40px;
+    width: 80%;
+    font-family: geniso;
+    font-size: 2rem;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0);
+    
+}
+.hamburger {
+    display: none;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link {
+    font-size: 2rem;
+    font-family: geniso;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    color: #000000;
+    transition: color .4s ease-in-out, box-shadow .3s ease-in-out;
+    padding: 5px;
+    
+}
+/*effects*/
+.nav-link:hover {
+    box-shadow: inset 160px 0 0 0 #000000;
+    color: rgb(255, 255, 255);
+  }
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+.main-container {
+    position: relative;
+    width: 100%;    
+}
+.namewrapper{
+    position: relative;
+    margin-top: 30vh;
+    text-align: center;
+  
+}
+.namewrapper p{
+    text-align: center;
+    font-family: geniso;
+    color: #151515;
+}
+.name{
+    font-size: 52px;
+}
+.designer{
+    font-size: 40px;
+}
+
+.services{
+    position: relative;
+    background-color: #ffffff;
+    top: 40vh;
+    height: 500px;
+   
+}
+.services-wrapper{
+    position: relative;
+    top: 10vh;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    align-items: center;
+    
+}
+.service{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(189, 189, 189);
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+.service-txt{
+    font-family: geniso;
+    font-size: 30px;
+    text-align: center;
+}
+.stuff-wrapper{
+    position: relative;
+    top: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.stuff{
+    height: 30vh;
+    flex-grow: 1;
+    position: relative;
+    padding: 30px;
+}
+.stuff img {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}

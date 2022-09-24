@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="/css/style_homepage.css">
-    <link rel="stylesheet" href="/css/style.scss">
     <link rel="shortcut icon" type="image/jpg" href="img/AngelFavicon.jpg"/>
-    <link rel="stylesheet"
+    <link
+        rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <title>Angelov Design</title>
+    <title>Adam Angelov</title>
 
     <style>
       body{
@@ -19,7 +19,7 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
-        background-color: rgba(0, 0, 0, 0.39)
+       
   }
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap');
     </style>
@@ -79,7 +79,7 @@ function init() {
     clock = new THREE.Clock();
 
     loader.load(
-      '/model/test.gltf',
+      '/model/xxx.gltf',
         function (gltf) {
             console.log(gltf);
             obj = gltf.scene;
@@ -247,7 +247,7 @@ $(window).on("load",function(){
             
             <ul class="nav-menu">
                 <li class="nav-item">  
-                    <a id="scrollToTopBtn" class="nav-link">About me</a>
+                    <a id="scrollToTopBtn" class="nav-link">New Projects</a>
                 </li>
                 <li class="nav-item">
                   <a href="Angel_architecture.html" class="nav-link">Architecture</a>
@@ -272,34 +272,71 @@ $(window).on("load",function(){
     </header>
 
     <section class="main_container">
-        <div class="spacer1"></div>
+
+        
         <div class="designtitle">
             <p class="maintitle">Adam Angelov</p>
-            <p class="secondtitle"></p>
+            <p class="secondtitle">_Projects</p>
         </div>
 
-    <section class="motowrapper">
+        <section class="motowrapper1">
+            <div id="motodiv1">
+                <p class="mototext2">Designed with</p>
+                <p class="mototext">Creativity</p>
+            </div>
+        </section>
 
-        <div class="moto">
-            <p class="mototext">Design</p> 
-            <p class="mototext2">invented by</p>
-        </div>
-        <div class="moto">
-            <p class="mototext">Creativity</p>
-            <p class="mototext2">developed with</p>
-        </div>
-        <div class="moto">
-            <p class="mototext">Precision</p>
-        </div>
-        <div class="moto">
-            <p class="mototext"></p>
-        </div>
+        <section class="motowrapper2">
+            <div id="motodiv2">
+                <p class="mototext2">developed with</p>
+                <p class="mototext">Precision</p>
+            </div>
+        </section>
+        
+    <section class="projectswrapper">
+
+        <ul class="image_wrapper">
+
+            <div class="gallery_pics">
+                <img src="img/3D/1_VTOL drone HD composition.jpg" alt="" class="image" 
+                id="">
+                <img src="img/3D/1_VTOL drone HD composition.jpg" alt="" id="project_detail1" >
+                <div class="project-txt-overlay">
+                  <p>xxxxxxxxxxxxx</p>
+                </div>
+            </div>
+            
+
+            <div class="gallery_pics">
+                <img src="img/arch/sarka 2.jpg" alt="" class="image" style="width:100%"
+                id="myImg4">
+                <div class="project-txt-overlay">
+                  <p>xxxxxxxxxxxxx</p>
+                </div>
+            </div>
+
+            <div class="gallery_pics">
+                <img src="img/arch/sarka 2.jpg" alt="" class="image" style="width:100%"
+                id="myImg4">
+                <div class="project-txt-overlay">
+                  <p>xxxxxxxxxxxxx</p>
+                </div>
+            </div>
+
+            <div class="gallery_pics">
+                <img src="img/arch/sarka 2.jpg" alt="" class="image" style="width:100%"
+                id="myImg4">
+                <div class="project-txt-overlay">
+                  <p>xxxxxxxxxxxxx</p>
+                </div>
+            </div>
+            
+        </ul>
 
     </section>
 
         <div class="about">
-            <p class="mytitle">_ Welcome to my digital place on the network _</p>
-            <p class="mytext2">I am a student of frontend development, architecture, 3D enthusiast and highly creative person with interest in arts and design.</p>
+            <p class="mytext2">XXX</p>
         </div>
         <div class="frontend">
             <p class="frontendtitle">- Frontend -</p>
