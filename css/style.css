@@ -1,6 +1,13 @@
+
 @font-face {
-    font-family: geniso;
-    src: url(fonts/GENISO.ttf);
+    font-family: aquire;
+    src: url(fonts/Aquire-BW0ox.otf);
+    font-weight: regular;
+
+}
+@font-face {
+    font-family: spartanlight;
+    src: url(fonts/Spartan-Light.ttf);
     font-weight: light;
 
 }
@@ -84,73 +91,79 @@ z-index: 0;
     z-index: 100;   
 }
 .navbar {
-    position: fixed;
+    position: absolute;
     top: 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    padding: 20px 0px;
     width: 100%;
     font-family: geniso;
-    font-size: 2rem;
     z-index: 100;
     color: #ffffff;
+    text-align: center;
     /*background-image: linear-gradient(to right, #46eded, #28125c);
     */
 }
-.hamburger {
-    display: none;
-}
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #ffffff;
-}
-.nav-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.nav-item {
-    margin-left: 5rem;
-}
 
 .nav-link {
-    font-size: 2rem;
-    font-family: geniso;
+    font-size: 1.1vw;
+    font-family: spartanlight;
     box-shadow: inset 0 0 0 0 #ffffff;
     transition: color .4s ease-in-out, box-shadow .3s ease-in-out;
-    padding: 5px;
+    display: block;
+    
+}
+#work{
+
+}
+#about{
+
+}
+#contact{
+    
+
+}
+
+
+
+#work-underline{
+    border-top: 0px solid white;
+    width: 100px;
+    margin-top: 5px;
+}
+#about-underline{
+    border-top: 0px solid white;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+#contact-underline{
+    border-top: 0px solid white;
+    width: 100px;
+    margin-top: 5px;
+   
     
     
 }
+
 /*effects*/
 .nav-link:hover {
     box-shadow: inset 160px 0 0 0 #100830a4;
     color: rgb(255, 255, 255);
 }
-.nav-logo {
-    font-size: 2rem;
-    font-family: geniso;
-    box-shadow: inset 0 0 0 0 #ffffff;
-    color: #000000;
-    transition: color .4s ease-in-out, box-shadow .3s ease-in-out;
-    padding: 5px;
-}
+
 .main-container {
-    background-image: url("../img/wawe_color.jpg");
-    /*background-image: linear-gradient(to right, #46eded, #28125c);*/
+    position: absolute;
+    background-image: url("../img/background_indredgo.png");
     background-color: #ffffff;
-    height: 1000px;
+    height: auto;
     width: 100%;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     justify-content: center;
 
 }
@@ -165,103 +178,73 @@ z-index: 0;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #ffffff;
-  
-}
-.namewrapper p{
-    text-align: center;
-    font-family: geniso;
-    
+    color: #ffffff; 
 }
 .name{
-    font-size: 52px;
-    /*background: -webkit-linear-gradient(#46eded, #28125c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    */
-    background: -webkit-linear-gradient(#a27bff, #b5fdff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size:4.3vw;
+    font-family: aquire;
     
 }
 .designer{
-    font-size: 40px;
-    background: -webkit-linear-gradient(#a27bff, #b5fdff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-   
+    font-size: 1.35vw;
+    font-family: spartanlight;
+    text-align: right;
 }
-.serviceback{
+.indigo{
     position: relative;
+    top: 100vh;
     width: 100%;
-    height: 400px;
-    background-color: #fff;
-}
-.services-wrapper{
-    position: relative;
-    top: 10vh;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100vh;
+    background-color: #0c0426;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    
 }
-.service{
-    width: 200px;
-    height: 200px;
-    background-color: rgb(255, 254, 254);
-    border-radius: 5px;
-    border: 0px solid #838383;
-    background-color: #f3f3f3;
+.service-img{
+    position: relative;
+    display: block;
+    max-width: 185px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 4px 8px 0 rgba(18, 0, 34, 0.2), 0 6px 20px 0 rgba(8, 0, 44, 0.19);
-    
-   
+}
+.head1{
+    font-size: 25px;
+    font-family: spartanlight;
+    padding: 10px;
+}
+.line1{
+    border-top: 0px solid white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.graphic{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 5vh;
+}
+.web{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 5vh;
+}
+.třidé{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 5vh;
 }
 .service-txt{
-    font-family: geniso;
-    font-size: 30px;
+    font-size: 18px;
+    font-family: spartanlight;  
     text-align: center;
-    color: #200c68;
 }
-.service-ico{
-    position: relative;
-    display: block;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    
+.service-txt p{
+    margin: 10px;
 }
-.somestuff{
-    position: relative;
-}
-.stuff-wrapper{
-    position: relative;
-    background-color: #dadadae8;
-    display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.stuff{
-    height: 30vh;
-    flex-grow: 1;
-    position: relative;
-    padding: 30px;
-}
-.stuff img {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    max-height: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    object-fit: cover;
-}
+
+
