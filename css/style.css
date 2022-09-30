@@ -59,8 +59,7 @@
     box-sizing: border-box;
 }
 html {
-    font-size: 62.5%;
-    font-family: geniso;
+    font-family: spartanlight; 
 }
 li {
     list-style: none;
@@ -106,6 +105,11 @@ body {
     transition: color .4s ease-in-out, box-shadow .3s ease-in-out;
     display: block;  
 }
+@media only screen and (max-width: 700px) {
+    .nav-link{
+        font-size: 18px;
+    }
+}
 #work{
 
 }
@@ -138,6 +142,8 @@ body {
     color: rgb(255, 255, 255);
 }
 
+
+/*SECTION1*/
 .main-container {
     position: absolute;
     background-image: url("../img/background_indredgo.png");
@@ -149,7 +155,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: center;
-
 }
 .second-container{
     position: relative;
@@ -166,23 +171,38 @@ body {
 }
 .name{
     font-size:4.3vw;
-    font-family: aquire;
-    
+    min-height: 20px;
+    font-family: aquire; 
 }
 .designer{
     font-size: 1.35vw;
     font-family: spartanlight;
     text-align: right;
 }
+@media only screen and (max-width: 700px) {
+    .name {
+      font-size: 50px;
+      margin: 10px;
+    }
+    .designer{
+        font-size: 20px;
+        text-align: center;
+        margin-top: 30px;
+    }
+  }
+
+
+
 /*SECTION2*/
 .indigo{
     position: relative;
     top: 100vh;
     width: 100%;
-    height: 50vh;
+    
     background-color: #0c0426;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    
 }
 .service-img{
     position: relative;
@@ -202,27 +222,15 @@ body {
     margin-right: auto;
 }
 
-.graphic{
-    width: 70%;
+.service{
+    height: 40vh;
+    flex-grow: 1;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    top: 5vh;
+    margin: 25px;
 }
-.web{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: 5vh;
-}
-.třidé{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: 5vh;
-}
+
 .service-txt{
     font-size: 18px;
     font-family: spartanlight;  
@@ -231,5 +239,76 @@ body {
 .service-txt p{
     margin: 10px;
 }
+.slogan-wrapper{
+    width: 100%;
+    text-align: center;
+    margin: 30px;
+}
+.slogan{
+    margin: 10px;
+    font-size: 1.2rem;
+    font-family: spartanlight; 
+}
 
+/*SECTION3*/
+.projects{
+    width: 100%;
+    position: relative;
+    top: 100vh;
+    height: 50vh;
+    background-color: #161616;
+    text-align: center;
+}
+.projecthead-wrapper{
+    padding: 10px;
+    width: 100%;
+    
+}
+.projects-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #161616;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.project{
+    max-height: 40vh;
+    flex-grow: 1;
+    max-width: 100%;
+    
+}
+.project img{
+    max-height: 40vh;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+@media only screen and (max-width: 700px) {
+    .project img {
+        max-width: 100%;
+    }
+  }
 
+/*SECTION4*/
+.aboutme{
+    background-image: url("../img/background_indredgo.png");
+    background-color: #ffffff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    background-color: #0c0426;
+    
+   
+}
+
+.gallery-link{
+    width: 100%;
+    position: relative;
+    top: 100vh;
+    height: 20vh;
+    background-color: #0c0426;
+}
