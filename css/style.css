@@ -11,8 +11,6 @@
     font-weight: light;
 
 }
-
-
 .loader-wrapper {
     width: 100%;
     height: 100%;
@@ -24,66 +22,62 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-  }
-  .loader {
+}
+.loader {
     display: inline-block;
     width: 30px;
     height: 30px;
     position: relative;
     border: 4px solid #Fff;
     animation: loader 2s infinite ease;
-  }
-  .loader-inner {
+}
+.loader-inner {
     vertical-align: top;
     display: inline-block;
     width: 100%;
     background-color: #fff;
     animation: loader-inner 2s infinite ease-in;
-  }
-  
+}
   @keyframes loader {
     0% { transform: rotate(0deg);}
     25% { transform: rotate(180deg);}
     50% { transform: rotate(180deg);}
     75% { transform: rotate(360deg);}
     100% { transform: rotate(360deg);}
-  }
-  
+}
   @keyframes loader-inner {
     0% { height: 0%;}
     25% { height: 0%;}
     50% { height: 100%;}
     75% { height: 100%;}
     100% { height: 0%;}
-  }
+}
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 html {
-font-size: 62.5%;
-font-family: geniso;
+    font-size: 62.5%;
+    font-family: geniso;
 }
 li {
-list-style: none;
+    list-style: none;
 }
 a {
-text-decoration: none;
-color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 body {
-background-color: #ffffff;
-color: #ffffff;
-background-repeat:no-repeat;
-background-position:center center fixed; 
-max-width: 100%; 
-z-index: 0;
+    background-color: #ffffff;
+    color: #ffffff;
+    background-repeat:no-repeat;
+    background-position:center center fixed;
+    max-width: 100%;
+    z-index: 0;
 }
-
-
-/*navigation*/
+/*NAVIGATION*/
 .header{
     position: sticky;
     right: 0px;
@@ -105,14 +99,12 @@ z-index: 0;
     /*background-image: linear-gradient(to right, #46eded, #28125c);
     */
 }
-
 .nav-link {
     font-size: 1.1vw;
     font-family: spartanlight;
     box-shadow: inset 0 0 0 0 #ffffff;
     transition: color .4s ease-in-out, box-shadow .3s ease-in-out;
-    display: block;
-    
+    display: block;  
 }
 #work{
 
@@ -121,12 +113,8 @@ z-index: 0;
 
 }
 #contact{
-    
 
 }
-
-
-
 #work-underline{
     border-top: 0px solid white;
     width: 100px;
@@ -142,12 +130,8 @@ z-index: 0;
 #contact-underline{
     border-top: 0px solid white;
     width: 100px;
-    margin-top: 5px;
-   
-    
-    
+    margin-top: 5px;   
 }
-
 /*effects*/
 .nav-link:hover {
     box-shadow: inset 160px 0 0 0 #100830a4;
@@ -190,11 +174,12 @@ z-index: 0;
     font-family: spartanlight;
     text-align: right;
 }
+/*SECTION2*/
 .indigo{
     position: relative;
     top: 100vh;
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     background-color: #0c0426;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
