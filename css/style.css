@@ -189,16 +189,88 @@ body {
         text-align: center;
         margin-top: 30px;
     }
-  }
-
-
-
+}
 /*SECTION2*/
+.about{
+    width: 100%;
+    position: relative;
+    top: 100vh;
+    background-color: #161616;
+    text-align: center;
+}
+.aboutme{
+    background-image: url("../img/matrix-lavaskylavasky3.jpg");
+    background-color: #ffffff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+}
+.about-title{
+    position: relative;
+    height: 10vh;
+}
+#about-head{
+    padding: 40px;
+    position: relative;
+    
+}
+.about-wrapper{
+    height: 70vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    background-image: url("../img/matrix-lavaskylavasky.jp");
+    /*background-color: #151515;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px;
+    
+
+}
+@media only screen and (max-width: 700px) {
+    .about-wrapper{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+  }
+.about700{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+}
+.profile-text-wrapper{
+    position: relative;
+    width: 100%;
+    text-align: justify;
+    background-color: #151515dc;
+    padding: 50px;
+    padding-right: 80px;
+    
+}
+.profile-text-wrapper p{
+    margin: 5px;
+}
+.profilepicture{
+    display: block;
+    max-width: 100%;
+}
+.about-txt{
+    color: white;
+    font-size: 50px;
+}
+/*SECTION3*/
 .indigo{
     position: relative;
     top: 100vh;
     width: 100%;
-    
+    padding-left: 20vh;
+    padding-right: 20vh;
     background-color: #0c0426;
     display: flex;
     flex-wrap: wrap;
@@ -223,7 +295,7 @@ body {
 }
 
 .service{
-    height: 40vh;
+    height: 37vh;
     flex-grow: 1;
     margin-left: auto;
     margin-right: auto;
@@ -249,20 +321,33 @@ body {
     font-size: 1.2rem;
     font-family: spartanlight; 
 }
-
-/*SECTION3*/
+/*SECTION4 Gallery*/
+.gallery{
+    position: relative;
+    top: 100vh;
+    width: 100%;
+    background-image: url("../img/background_indredgo.png");
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    text-align: center;  
+}
+.link-wrapper{
+    padding: 50px;
+}
+/*SECTION5*/
 .projects{
     width: 100%;
     position: relative;
     top: 100vh;
-    height: 50vh;
     background-color: #161616;
-    text-align: center;
+    text-align: center;   
 }
 .projecthead-wrapper{
     padding: 10px;
-    width: 100%;
-    
+    width: 100%;  
 }
 .projects-wrapper{
     display: flex;
@@ -270,45 +355,46 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     background-color: #161616;
-    max-width: 100%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
 }
 .project{
-    max-height: 40vh;
+    max-height: 30vh;
     flex-grow: 1;
     max-width: 100%;
     
 }
 .project img{
-    max-height: 40vh;
+    max-height: 30vh;
     min-width: 100%;
     object-fit: cover;
     vertical-align: bottom;
+    padding: 20px;
+}
+.project:hover .project-txt-overlay{
+    width: 450px;
+}
+.project-txt-overlay{
+    position: relative;
+    bottom: 40px;
+    left: 0;
+    width: 0px;
+    height: 40px;
+    display: flex;
+    overflow: hidden;
+    transition: 0.7s ease;
+    z-index: 10;
+    background-color: #101010c5;
+    white-space: nowrap;
+    align-items: center;
+}
+.project-txt-overlay p{
+    padding-left: 10px;
 }
 @media only screen and (max-width: 700px) {
     .project img {
         max-width: 100%;
     }
   }
-
-/*SECTION4*/
-.aboutme{
-    background-image: url("../img/background_indredgo.png");
-    background-color: #ffffff;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
-    background-color: #0c0426;
-    
-   
-}
-
-.gallery-link{
-    width: 100%;
-    position: relative;
-    top: 100vh;
-    height: 20vh;
-    background-color: #0c0426;
-}
