@@ -110,15 +110,6 @@ body {
         font-size: 18px;
     }
 }
-#work{
-
-}
-#about{
-
-}
-#contact{
-
-}
 #work-underline{
     border-top: 0px solid white;
     width: 100px;
@@ -191,6 +182,24 @@ body {
     }
 }
 /*SECTION2*/
+@media only screen and (min-width: 701px) {
+    .aboutme-mobile{
+    display: none;
+    }
+}
+.profile-img-mobile{
+    display: block;
+    position: relative;
+    max-height: 50vh;
+    left: -80px;
+}
+.about-head-mobile{
+    position: relative;
+    top: -90px;
+    font-size: 40px;
+    text-align: right;
+    background-color: #0c042693;
+}
 .about{
     width: 100%;
     position: relative;
@@ -212,30 +221,30 @@ body {
 }
 #about-head{
     padding: 40px;
-    position: relative;
-    
+    position: relative; 
 }
 .about-wrapper{
-    height: 70vh;
+    height: 85vh;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     grid-template-columns: 2fr 1.5fr;
-    background-image: url("../img/matrix-lavaskylavasky.jp");
+    background-image: url("../img/");
     /*background-color: #151515;*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0px;
-    
-
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1200px) {
     .about-wrapper{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        height: 70vh;
+    }
+  }
+@media only screen and (max-width: 700px) {
+    .aboutme{
+        display: none;
     }
   }
 .about700{
@@ -248,7 +257,7 @@ body {
     position: relative;
     width: 100%;
     text-align: justify;
-    background-color: #151515dc;
+    background-color: #060022dc;
     padding: 50px;
     padding-right: 80px;
     
@@ -273,8 +282,7 @@ body {
     padding-right: 20vh;
     background-color: #0c0426;
     display: flex;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap;   
 }
 .service-img{
     position: relative;
@@ -284,16 +292,31 @@ body {
     margin-right: auto;
 }
 .head1{
-    font-size: 25px;
+    font-size: 22px;
     font-family: spartanlight;
     padding: 10px;
+}
+@media only screen and (max-width: 1300px) {
+    .head1{
+        font-size: 18px;
+    }
 }
 .line1{
     border-top: 0px solid white;
     margin-left: auto;
     margin-right: auto;
 }
-
+.service-txt{
+    font-size: 18px;
+    font-family: spartanlight;  
+    text-align: center;
+    opacity: 0.0;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
 .service{
     height: 37vh;
     flex-grow: 1;
@@ -302,14 +325,13 @@ body {
     position: relative;
     margin: 25px;
 }
-
-.service-txt{
-    font-size: 18px;
-    font-family: spartanlight;  
-    text-align: center;
+.service:hover .service-txt{
+    opacity: 1.0;
 }
+
 .service-txt p{
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .slogan-wrapper{
     width: 100%;
@@ -327,6 +349,7 @@ body {
     top: 100vh;
     width: 100%;
     background-image: url("../img/background_indredgo.png");
+    background-color: #161616;
     height: auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -335,7 +358,42 @@ body {
     text-align: center;  
 }
 .link-wrapper{
-    padding: 50px;
+   padding-top: 50px;
+   padding-bottom: 50px;
+}
+#gallery-head{
+    margin-bottom: 20px;
+}
+.gallery-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+.g-button{
+    width: 200px;
+    height: 50px;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    background-color: #0c0426;
+    margin-left:50px;
+    margin-right: 50px;
+    transition: border 1s, transform 2s;
+    box-shadow: inset 0 0 0 0 #bb173b;
+    transition: color .4s ease-in-out, box-shadow .3s ease-in-out;
+    text-align: center;
+    /*border: solid rgb(226, 226, 226) 0.1px;*/
+    
+}
+.g-button:hover {
+    box-shadow: inset 200px 0 0 0 #ffffff;
+    color: rgb(14, 0, 51);
+}
+.g-butt-txt {
+    font-size: 20px;
+    padding-top: 15px;
 }
 /*SECTION5*/
 .projects{
@@ -398,3 +456,7 @@ body {
         max-width: 100%;
     }
   }
+
+
+
+  
