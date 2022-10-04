@@ -69,23 +69,37 @@ a {
     color: inherit;
 }
 body {
-    background-color: #ffffff;
-    color: #ffffff;
+    background-color: #0c0426;
     background-repeat:no-repeat;
     background-position:center center fixed;
     max-width: 100%;
     z-index: 0;
 }
 /*NAVIGATION*/
-.header{
-    position: sticky;
-    right: 0px;
+.cta {
+    position: fixed;
     top: 0px;
-    z-index: 100;   
+    width: 100%;
+    height: 60px;
+    background: #0c0426;
+    z-index: 1;
+    transition: all 1s;
 }
-.navbar {
-    position: absolute;
-    top: 0px;
+.hide {
+    opacity:0;
+    bottom:-100%;
+}
+.show {
+    opacity:1;
+    bottom:0;
+}
+#navWrap {
+    height:70px
+}
+nav {
+    position: relative;
+    top: -70px;
+    height: 70px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
@@ -98,12 +112,17 @@ body {
     /*background-image: linear-gradient(to right, #46eded, #28125c);
     */
 }
+.sticky {
+    position: fixed;
+    top:0;
+}
+
 .nav-link {
     font-size: 1.1vw;
     font-family: spartanlight;
     box-shadow: inset 0 0 0 0 #ffffff;
     transition: color .4s ease-in-out, box-shadow .3s ease-in-out;
-    display: block;  
+    
 }
 @media only screen and (max-width: 700px) {
     .nav-link{
@@ -114,6 +133,9 @@ body {
     border-top: 0px solid white;
     width: 100px;
     margin-top: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.4s linear;
 }
 #about-underline{
     border-top: 0px solid white;
@@ -121,27 +143,41 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.4s linear;
 }
 #contact-underline{
     border-top: 0px solid white;
     width: 100px;
-    margin-top: 5px;   
+    margin-top: 5px;  
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.4s linear; 
 }
 /*effects*/
 .nav-link:hover {
-    box-shadow: inset 160px 0 0 0 #100830a4;
     color: rgb(255, 255, 255);
 }
-
-
+#work:hover #work-underline{
+    visibility: visible;
+    opacity: 1;
+}
+#about:hover #about-underline{
+    visibility: visible;
+    opacity: 1;
+}
+#contact:hover #contact-underline{
+    visibility: visible;
+    opacity: 1;
+}
 /*SECTION1*/
 .main-container {
-    position: absolute;
     background-image: url("../img/background_indredgo.png");
-    background-color: #ffffff;
+    background-color: #0f0f0f;
     height: auto;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -203,7 +239,6 @@ body {
 .about{
     width: 100%;
     position: relative;
-    top: 100vh;
     background-color: #161616;
     text-align: center;
 }
@@ -276,7 +311,6 @@ body {
 /*SECTION3*/
 .indigo{
     position: relative;
-    top: 100vh;
     width: 100%;
     padding-left: 20vh;
     padding-right: 20vh;
@@ -346,10 +380,9 @@ body {
 /*SECTION4 Gallery*/
 .gallery{
     position: relative;
-    top: 100vh;
     width: 100%;
     background-image: url("../img/background_indredgo.png");
-    background-color: #161616;
+    background-color: #1616169f;
     height: auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -360,6 +393,7 @@ body {
 .link-wrapper{
    padding-top: 50px;
    padding-bottom: 50px;
+   background-color: #ffffff00;
 }
 #gallery-head{
     margin-bottom: 20px;
@@ -399,7 +433,6 @@ body {
 .projects{
     width: 100%;
     position: relative;
-    top: 100vh;
     background-color: #161616;
     text-align: center;   
 }
@@ -459,4 +492,4 @@ body {
 
 
 
-  
+
