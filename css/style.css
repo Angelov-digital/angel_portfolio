@@ -61,6 +61,7 @@
 html {
     font-family: spartanlight; 
     color: #ffffff;
+    scroll-behavior: smooth;
 }
 li {
     list-style: none;
@@ -84,7 +85,7 @@ body {
     top: 0px;
     width: 100%;
     height: 60px;
-    background: #0c0426;
+    background: #0c0426dc;
     /*background-image: url("../img/background_indredgo.png");*/
     background-position: center;
     background-repeat: no-repeat;
@@ -278,7 +279,6 @@ nav {
     width: 100%;
     position: relative;
     bottom: 70px;
-   
     text-align: center;
 }
 .aboutme{
@@ -288,6 +288,12 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: center;
+}
+#aboutscroll{
+    position: absolute;
+    top: 92vh;
+    width: 90px;
+    height: 40px;
 }
 .about-title{
     position: relative;
@@ -596,6 +602,11 @@ nav {
     width: 100%;
     background-color: rgb(8, 3, 22);  
 }
+.project-head{
+    font-size: 30px;
+    position: relative;
+    top: 20px;
+}
 .projects-wrapper{
     display: flex;
     flex-direction: row;
@@ -787,4 +798,30 @@ nav {
 .prev:hover,
 .next:hover {
   background-color: rgba(82, 82, 82, 0.452);
+}
+/*CONTACT*/
+.contact{
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+    background-color: #04010e;
+    text-align: center;
+    font-size: 18px;
+}
+.contact p {
+    margin: 10px;
+}
+.contact-head{
+    position: relative;
+    font-size: 30px;
+    bottom: 30px;
+}
+/*FOOTER*/
+.footer{
+    text-align: center;
+    font-size: 13px;
+    position: relative;
+    width: 100%;
+    background-color: #020107;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 }

@@ -2,7 +2,7 @@ myID = document.getElementById("customID");
 
 var myScrollFunc = function() {
   var y = window.scrollY;
-  if (y >= 900) {
+  if (y >= 930) {
     myID.className = "cta show"
   } else {
     myID.className = "cta hide"
