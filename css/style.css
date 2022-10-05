@@ -60,6 +60,7 @@
 }
 html {
     font-family: spartanlight; 
+    color: #ffffff;
 }
 li {
     list-style: none;
@@ -70,8 +71,10 @@ a {
 }
 body {
     background-color: #0c0426;
-    background-repeat:no-repeat;
-    background-position:center center fixed;
+    background-image: url("../img/vertical-lavasky.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     max-width: 100%;
     z-index: 0;
 }
@@ -82,6 +85,10 @@ body {
     width: 100%;
     height: 60px;
     background: #0c0426;
+    background-image: url("../img/background_indredgo.pn");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 1;
     transition: all 1s;
 }
@@ -157,7 +164,10 @@ nav {
 }
 /*effects*/
 .nav-link:hover {
-    color: rgb(255, 255, 255);
+    /*color: rgb(219, 29, 108);*/
+    color: #fff;
+    -webkit-animation: pulse 1s;
+    animation: pulse 1s;
 }
 #work:hover #work-underline{
     visibility: visible;
@@ -218,6 +228,9 @@ nav {
     }
 }
 /*SECTION2*/
+.aboutme-mobile{
+    background-color: #0c042600;
+}
 @media only screen and (min-width: 701px) {
     .aboutme-mobile{
     display: none;
@@ -226,20 +239,45 @@ nav {
 .profile-img-mobile{
     display: block;
     position: relative;
-    max-height: 50vh;
-    left: -80px;
+    width: 100%;
+    overflow: hidden;
 }
 .about-head-mobile{
-    position: relative;
-    top: -90px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
     font-size: 40px;
+    padding: 10px;
+    text-align: left;
+    background-color: #0c042693;
+}
+.about-head-mobile2{
+    position: relative;
+    bottom: 65px;
+    right: 0;
+    font-size: 40px;
+    padding: 10px;
     text-align: right;
     background-color: #0c042693;
+}
+.about-txt-wrapper-mobile{
+    position: relative;
+    top: -60px;
+    text-align: justify;
+    margin: 30px;
+    width: 90%;
+    background-color: #1f1f1f9d;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 5px;
 }
 .about{
     width: 100%;
     position: relative;
-    background-color: #161616;
+    bottom: 70px;
+   
     text-align: center;
 }
 .aboutme{
@@ -318,6 +356,18 @@ nav {
     display: flex;
     flex-wrap: wrap;   
 }
+@media only screen and (max-width: 700px) {
+    .indigo{
+        padding-left: 0;
+        padding-right: 0;
+        width: 90%;
+        bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #1f1f1f9d;
+        border-radius: 5px;
+    }
+  }
 .service-img{
     position: relative;
     display: block;
@@ -325,6 +375,12 @@ nav {
     margin-left: auto;
     margin-right: auto;
 }
+@media only screen and (max-width: 700px) {
+    .service-img{
+        max-width: 120px;
+        margin-left: 0;
+    }
+  }
 .head1{
     font-size: 22px;
     font-family: spartanlight;
@@ -351,6 +407,17 @@ nav {
     -o-transition: all 500ms ease-in-out;
     transition: all 500ms ease-in-out;
 }
+@media only screen and (max-width: 700px) {
+    .service-txt{
+        position: relative;
+        opacity: 1;
+        font-size: 15px;
+        bottom: 110px;
+        text-align: right;
+        padding-right: 20px;
+
+    }
+}
 .service{
     height: 37vh;
     flex-grow: 1;
@@ -359,6 +426,17 @@ nav {
     position: relative;
     margin: 25px;
 }
+@media only screen and (max-width: 700px) {
+    .service{
+        height: 18vh;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        margin: 25px;
+        background-color: #0c0426;
+        border-radius: 5px;
+    }
+  }
 .service:hover .service-txt{
     opacity: 1.0;
 }
@@ -382,7 +460,7 @@ nav {
     position: relative;
     width: 100%;
     background-image: url("../img/background_indredgo.png");
-    background-color: #1616169f;
+    
     height: auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -390,6 +468,12 @@ nav {
     color: #ffffff;
     text-align: center;  
 }
+@media only screen and (max-width: 700px) {
+    .gallery{
+        background-image: none;
+        background-color: none;     
+    }
+  }
 .link-wrapper{
    padding-top: 50px;
    padding-bottom: 50px;
@@ -436,6 +520,11 @@ nav {
     background-color: #161616;
     text-align: center;   
 }
+@media only screen and (max-width: 700px) {
+    .projects{
+        background-color: rgba(0, 0, 0, 0);     
+    }
+  }
 .projecthead-wrapper{
     padding: 10px;
     width: 100%;  
@@ -451,6 +540,13 @@ nav {
     margin-right: auto;
     margin-bottom: 50px;
 }
+@media only screen and (max-width: 700px) {
+    .projects-wrapper{
+        background-color: #1f1f1f9d;
+        width: 90%;
+        border-radius: 5px;   
+    }
+  }
 .project{
     max-height: 30vh;
     flex-grow: 1;
