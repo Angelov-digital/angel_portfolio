@@ -120,6 +120,12 @@ nav {
     /*background-image: linear-gradient(to right, #46eded, #28125c);
     */
 }
+@media only screen and (max-width: 700px) {
+    nav {   
+        top:-140px;
+
+    }
+}
 .sticky {
     position: fixed;
     top:0;
@@ -255,7 +261,7 @@ nav {
 }
 .about-head-mobile2{
     position: relative;
-    bottom: 65px;
+    bottom: 68px;
     right: 0;
     font-size: 40px;
     padding: 10px;
@@ -629,6 +635,7 @@ nav {
     max-height: 30vh;
     flex-grow: 1;
     max-width: 100%;
+    cursor: pointer;
     
 }
 .project img{
