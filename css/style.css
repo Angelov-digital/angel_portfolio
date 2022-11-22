@@ -255,7 +255,7 @@ nav {
 }
 .about-head-mobile2{
     position: relative;
-    bottom: 65px;
+    bottom: 67px;
     right: 0;
     font-size: 40px;
     padding: 10px;
@@ -340,6 +340,7 @@ nav {
     background-color: #060022dc;
     padding: 50px;
     padding-right: 80px;
+    font-size: 1.2rem;
     
 }
 .profile-text-wrapper p{
@@ -353,37 +354,48 @@ nav {
     text-align: initial;
     margin-top: 2vh;
     margin-bottom: 2vh;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 .about-txt-category-mobile{
     text-align: initial;
     margin: 10px;
 }
+.studio-wrapper{
+   
+}
 .about-txt1200{
     color: white;
-    font-size: 40px;
+    font-size: 4rem;
     text-align: initial;
-    width: 100%;
+    width: 100%;    
     background-color: #0c042679;
-    height: 7vh;
-    padding: 10px;
-    padding-left: 4vh;
+    
 }
-.hello{
-    font-size: 30px;
-}
+
 @media only screen and (max-width: 1200px) {
     .about-txt{
         display: none;
     }
 }
+.graphic-wrapper{
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    font-size: 7rem;
+    font-family: aquire;
+    color: rgba(134, 36, 57, 0.349);
+    
+}
 /*SECTION3*/
+
 .head-services{
     font-size: 30px;
     text-align: center;
     position: relative;
-    bottom: 50px;
     width: 100%;
+    padding: 20px;
+    
     
 }
 @media only screen and (max-width: 700px) {
@@ -394,6 +406,7 @@ nav {
         bottom: 0px;
         width: 100%;
         padding-top: 20px;
+        
     }
 }
 .indigo{
@@ -638,8 +651,12 @@ nav {
     vertical-align: bottom;
     padding: 0px;
 }
+
 .project:hover .project-txt-overlay{
     width: 450px;
+}
+.project:hover .project-txt-overlay-vertical{
+    width: 100%;
 }
 .project-txt-overlay{
     position: relative;
@@ -655,6 +672,22 @@ nav {
     white-space: nowrap;
     align-items: center;
 }
+.project-txt-overlay-vertical{
+    position: relative;
+    bottom: 40px;
+    left: 0;
+    width: 0px;
+    height: 40px;
+    display: flex;
+    overflow: hidden;
+    transition: 0.7s ease;
+    z-index: 10;
+    background-color: #101010c5;
+    white-space: nowrap;
+    align-items: center;
+}
+
+
 @media only screen and (max-width: 700px) {
     .project-txt-overlay {
        width: 100%;
@@ -663,6 +696,9 @@ nav {
     }
   }
 .project-txt-overlay p{
+    padding-left: 10px;
+}
+.project-txt-overlay-vertical p{
     padding-left: 10px;
 }
 @media only screen and (max-width: 700px) {
@@ -694,7 +730,13 @@ nav {
 #project1-modal,
 #project2-modal,
 #project3-modal,
-#project4-modal {
+#project4-modal,
+#project5-modal,
+#project6-modal,
+#project7-modal,
+#project8-modal,
+#project9-modal,
+#project10-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -705,7 +747,7 @@ nav {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.781); /* Black w/ opacity */
   }
   /* Add Animation - Zoom in the Modal */
 .modal-head{
@@ -725,6 +767,12 @@ nav {
 .modal-content{
     display: block;
     height: 50vh;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+.modal-content-vertical{
+    display: block;
+    height: 80vh;
     animation-name: zoom;
     animation-duration: 0.6s;
   }
@@ -803,7 +851,7 @@ nav {
 .contact{
     padding-top: 7vh;
     padding-bottom: 7vh;
-    background-color: #04010e;
+    background-color: rgb(8, 3, 22);
     text-align: center;
     font-size: 18px;
 }
@@ -821,7 +869,8 @@ nav {
     font-size: 13px;
     position: relative;
     width: 100%;
-    background-color: #020107;
+    
+    background-color: #04010e;
     padding-top: 5vh;
     padding-bottom: 5vh;
 }
