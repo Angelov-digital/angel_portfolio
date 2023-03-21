@@ -11,6 +11,21 @@
     font-weight: light;
 
 }
+@font-face {
+    font-family: be;
+    src: url(fonts/BeVietnam-ThinItalic.ttf);
+    font-weight: light;
+
+}
+.header1{
+    font-size: 3vw;
+    font-family: be;
+    text-align: left;
+}
+.header2{
+    font-size: 1.5rem;
+    font-family: be;
+}
 .loader-wrapper {
     width: 100%;
     height: 100%;
@@ -71,13 +86,15 @@ a {
     color: inherit;
 }
 body {
-    background-color: #0c0426;
-    background-image: url("../img/vertical-lavasky.jpg");
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 100%;
     z-index: 0;
+}
+.spacer{
+    height: 150px;
 }
 /*NAVIGATION*/
 .cta {
@@ -85,7 +102,7 @@ body {
     top: 0px;
     width: 100%;
     height: 60px;
-    background: #0c0426dc;
+    background: #000000dc;
     /*background-image: url("../img/background_indredgo.png");*/
     background-position: center;
     background-repeat: no-repeat;
@@ -101,9 +118,22 @@ body {
     opacity:1;
     bottom:0;
 }
-#navWrap {
-    height:70px
+#navWrapTop {
+    position: absolute;
+    top: 0px;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    padding: 20px 0px;
+    width: 100%;
+    font-family: geniso;
+    z-index: 100;
+    color: #ffffff;
+    text-align: center;
+   
 }
+
 nav {
     position: relative;
     top: -70px;
@@ -190,7 +220,7 @@ nav {
 }
 /*SECTION1*/
 .main-container {
-    background-image: url("../img/background_indredgo.png");
+    background-image: url("../img/background_indredgo_crystalz5.png");
     background-color: #0f0f0f;
     height: auto;
     width: 100%;
@@ -235,8 +265,42 @@ nav {
     }
 }
 /*SECTION2*/
+.SECTION2{
+    position: relative;
+    bottom: 70px;
+    background-color: #04010e;
+    background-image: url("../img/lightkinetism4.pn");
+    background-size: cover;
+    background-position: center;
+}
+.motoCont{
+    margin-left: 10vh;
+    margin-top: 10vh;
+}
+.categCont{
+    position: relative;
+    top: 50px;
+}
+.about-txt-category{
+    text-align: left;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 1.5rem;
+}
+.about-txt-category-mobile{
+    text-align: initial;
+    margin: 10px;
+}
+.moreButtCont{
+    position: relative;
+    display: flex;
+    top: 150px;
+    right: 0;
+    align-items: right;
+    justify-content: right;
+}
 .aboutme-mobile{
-    background-color: #0c042600;
+    background-color: rgb(255, 255, 255);
 }
 @media only screen and (min-width: 701px) {
     .aboutme-mobile{
@@ -275,7 +339,7 @@ nav {
     overflow-wrap: break-word;
     margin: 30px;
     width: 90%;
-    background-color: #1f1f1f9d;
+    background-color: #060022;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
@@ -286,9 +350,11 @@ nav {
     position: relative;
     bottom: 70px;
     text-align: center;
+    height: 80vh;
 }
 .aboutme{
-    background-image: url("../img/matrix-lavaskylavasky3.jpg");
+    z-index: 9;
+    background-image: url("../img/background_indredgo_crystalz2flip.png");
     background-color: #ffffff;
     background-position: center;
     background-repeat: no-repeat;
@@ -315,9 +381,7 @@ nav {
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    grid-template-columns: 2fr 1.5fr;
-    background-image: url("../img/");
-    /*background-color: #151515;*/
+    grid-template-columns: 1fr 1fr;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -343,39 +407,14 @@ nav {
     position: relative;
     width: 100%;
     text-align: justify;
-    background-color: #060022dc;
+    background-color: #03010fbe;
     padding: 50px;
-    padding-right: 80px;
-    font-size: 1.2rem;
-    
-}
-.profile-text-wrapper p{
-    
+    font-size: 1vw;
+    padding-right: 10vh;
 }
 .profilepicture{
     display: block;
     max-width: 100%;
-}
-.about-txt-category{
-    text-align: initial;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    font-size: 1.5rem;
-}
-.about-txt-category-mobile{
-    text-align: initial;
-    margin: 10px;
-}
-.studio-wrapper{
-   
-}
-.about-txt1200{
-    color: white;
-    font-size: 4rem;
-    text-align: initial;
-    width: 100%;    
-    background-color: #0c042679;
-    
 }
 
 @media only screen and (max-width: 1200px) {
@@ -383,30 +422,23 @@ nav {
         display: none;
     }
 }
-.graphic-wrapper{
-    display: block;
-    position: absolute;
-    bottom: 10px;
-    left: 50px;
-    font-size: 7rem;
-    font-family: aquire;
-    color: rgba(134, 36, 57, 0.349);
-    
-}
+
 /*SECTION3*/
 
 .head-services{
-    font-size: 30px;
+    font-size: 2.5rem;
     text-align: center;
     position: relative;
     width: 100%;
-    padding: 20px;
+    padding: 100px;
+    padding-top: 150px;
+    color: #ffffff;
     
     
 }
 @media only screen and (max-width: 700px) {
     .head-services{
-        font-size: 30px;
+        font-size: 2rem;
         text-align: center;
         position: relative;
         bottom: 0px;
@@ -418,11 +450,8 @@ nav {
 .indigo{
     position: relative;
     width: 100%;
-    padding-left: 20vh;
-    padding-right: 20vh;
-    background-color: #0c0426;
-    display: flex;
-    flex-wrap: wrap;   
+    padding-left: 15vh;
+    padding-right: 15vh;  
 }
 @media only screen and (max-width: 700px) {
     .indigo{
@@ -432,16 +461,20 @@ nav {
         bottom: 110px;
         margin-left: auto;
         margin-right: auto;
-        background-color: #1f1f1f9d;
+        background-color: rgb(255, 255, 255);
         border-radius: 5px;
     }
   }
+
 .service-img{
     position: relative;
     display: block;
-    max-width: 185px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 170px;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
 }
 @media only screen and (max-width: 700px) {
     .service-img{
@@ -467,13 +500,17 @@ nav {
 .service-txt{
     font-size: 18px;
     font-family: spartanlight;  
-    text-align: center;
-    opacity: 0.0;
+    text-align: left;
     -webkit-transition: all 500ms ease-in-out;
     -moz-transition: all 500ms ease-in-out;
     -ms-transition: all 500ms ease-in-out;
     -o-transition: all 500ms ease-in-out;
     transition: all 500ms ease-in-out;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    padding-left: 3vh;
+    margin-right: 15px;
+    opacity: 0;
 }
 @media only screen and (max-width: 700px) {
     .service-txt{
@@ -483,17 +520,36 @@ nav {
         bottom: 110px;
         text-align: right;
         padding-right: 20px;
-
     }
 }
 .service{
-    height: 37vh;
+    height: 45vh;
     flex-grow: 1;
     margin-left: auto;
     margin-right: auto;
     position: relative;
     margin: 25px;
     box-shadow: 0 1px 3px rgba(black, 0.2);
+    
+}
+.backServimg{
+    position: relative;
+
+}
+.backServImg img{
+    position: absolute;
+    max-height: 45vh;
+    min-width: 100%;
+    object-fit: cover;
+    z-index: -99;
+    opacity: 0;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    border-radius: 10px;
+
 }
 @media only screen and (max-width: 700px) {
     .service{
@@ -502,16 +558,29 @@ nav {
         margin-right: auto;
         position: relative;
         margin: 25px;
-        background-color: #0c0426;
+        background-color: #060022;
         border-radius: 5px;
     }
-  }
+}
 .service:hover .service-txt{
-    opacity: 1.0;
+    opacity: 100%;
+    transition: 0.5s;
+}
+.service:hover .line1{
+    opacity: 0%;
+    transition: 0.5s;
 }
 .service:hover .service-img{
     -webkit-animation: pulse 1s;
     animation: pulse 1s;
+    opacity: 0;
+    transition: 0.5s;
+    
+}
+.service:hover .backServImg img{
+    opacity: 70%;
+    transition: 1s;
+    
 }
 .service-txt p{
     margin-top: 10px;
@@ -536,16 +605,15 @@ nav {
   .come-in:nth-child(odd) {
     animation-duration: 0.6s; /* So they look staggered */
   }
-  
+    
   @keyframes come-in {
     to { transform: translateY(0); }
   }
 /*SECTION4 Gallery*/
 .gallery{
-    display: none;
+   
     position: relative;
     width: 100%;
-    background-image: url("../img/background_indredgo.png");
     height: auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -602,7 +670,7 @@ nav {
 .projects{
     width: 100%;
     position: relative;
-    /*background-color: #0c0426;*/
+    bottom: 70px;
     text-align: center;   
 }
 @media only screen and (max-width: 700px) {
@@ -614,12 +682,12 @@ nav {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 30px;
-    background-color: rgb(8, 3, 22);
+    background-color: rgb(0, 0, 0);
   }
 .projecthead-wrapper{
     padding: 10px;
     width: 100%;
-    background-color: rgb(8, 3, 22);  
+    background-color: rgb(0, 0, 0);  
 }
 .project-head{
     font-size: 30px;
@@ -678,6 +746,7 @@ nav {
     background-color: #101010c5;
     white-space: nowrap;
     align-items: center;
+    padding-left: 10px;
 }
 .project-txt-overlay-vertical{
     position: relative;
@@ -701,12 +770,17 @@ nav {
        bottom: 0;
        z-index: 0;
     }
-  }
-.project-txt-overlay p{
-    padding-left: 10px;
-}
-.project-txt-overlay-vertical p{
-    padding-left: 10px;
+    .project-txt-overlay-vertical {
+        width: 100%;
+        bottom: 0;
+        z-index: 0;
+     }
+    .project-txt-overlay p{
+        padding-left: 10px;
+    }
+    .project-txt-overlay-vertical p{
+        padding-left: 10px;
+    }
 }
 @media only screen and (max-width: 700px) {
     .project img {
@@ -858,7 +932,7 @@ nav {
 .contact{
     padding-top: 7vh;
     padding-bottom: 7vh;
-    background-color: rgb(8, 3, 22);
+    background-color: rgb(0, 0, 0);
     text-align: center;
     font-size: 18px;
 }
