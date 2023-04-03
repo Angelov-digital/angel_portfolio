@@ -45,7 +45,7 @@ $(document).scroll(function () {
 
 $(window).scroll(function(event) {
   
-  $(".service").each(function(i, el) {
+  $(".serviceMain").each(function(i, el) {
     var el = $(el);
     if (el.visible(true)) {
       el.addClass("come-in"); 

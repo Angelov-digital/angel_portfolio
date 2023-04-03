@@ -12,7 +12,7 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <title>Angelov Design</title>
+    <title>Angelo Design</title>
 
     <style>
         body {
@@ -28,7 +28,7 @@
 
     <section class="main-container">
         <div class="namewrapper">
-            <p class="name">Angelov Design</p>
+            <p class="name">Angelo Design</p>
             <p class="designer">Visual studio</p>
         </div>
     </section>
@@ -74,9 +74,6 @@
     
     <section class="about">
         <div class="aboutme">
-
-           
-
             <div class="about-wrapper">  
                 <div class="motoCont">    
                     <p class="header1">Raise your public look to the higher dimension</p>      
@@ -94,12 +91,23 @@
                         <p>&emsp;</p>
                         <p>&emsp;</p>
                         <div class="categCont">
-                            <p class="about-txt-category">Graphic design</p>
-                            <p class="about-txt-category">3D graphics</p>
-                            <p class="about-txt-category">Web design</p>
+                            <div id="category">
+                                <p class="about-txt-category">Graphic design</p>
+                                <hr id="category-underline">
+                            </div>
+                            
+                            <div id="category">
+                                <p class="about-txt-category">3D graphics</p>
+                                <hr id="category-underline">
+                            </div>
+
+                            <div id="category">
+                                <p class="about-txt-category">Web design</p>
+                                <hr id="category-underline">
+                            </div>
                         </div>
-                        <div class="moreButtCont">
-                            <button class="moreButt">Show more</button>
+                        <div class="g-button showmore">
+                            <p class="g-butt-txt">Read more</p>
                         </div>  
                     </div> 
                 </div>
@@ -133,10 +141,17 @@
                     <img class="service-img" src="img/icon/iconGraphics.png">
 
                     <div class="servCont">
-                        <div id="graphic-txt" class="service-txt">
-                            <p>Creation of Printed Graphics</p>
-                            <p>Development of a Visual Identity</p>
-                            <p>Barnding and Logo Creation</p>
+                        <ul id="graphic-txt" class="service-txt">
+                            <li>Creation of Printed Graphics</li>
+                            <li>Development of a Visual Identity</li>
+                            <li>Barnding and Logo Creation</li>
+                        </ul>
+
+                        <div class="arrowCont">
+                            <div class="g-button">
+                                <p class="g-butt-txt">Show details</p>
+                            </div>
+                            <img class="arrow" src="img/icon/arrowRight.svg">
                         </div>
                     </div>
                 </div>
@@ -145,53 +160,71 @@
                     <img src="img/site/graphicdesign2.jpg">
                 </div>
 
-                <div class="arrowCont">
-                    <p>Show details</p>
-                    <img class="arrow" src="img/icon/arrowRight.svg">
+               
+            </div>
+
+            <div class="serviceMain" id="graphService"> 
+
+                <div>
+                    <p class="head1">Web Design</p>
+                    <hr class="line1">
+                    <img class="service-img" src="img/icon/icoWeb.png">
+
+                    <div class="servCont">
+                        <ul id="graphic-txt" class="service-txt">
+                            <li>Custom Web Creation</li>
+                            <li>User Experience Optimization</li>
+                            <li>Web Redesign</li>
+                        </ul>
+
+                        <div class="arrowCont">
+                            <div class="g-button">
+                                <p class="g-butt-txt">Show details</p>
+                            </div>
+                            <img class="arrow" src="img/icon/arrowRight.svg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="servImg2" id="graphback">
+                    <img src="img/site/code.jpg">
                 </div>
                
             </div>
-            
-            <div class="service">
 
-                <div class="backServImg" id="webback">
-                    <img src="">
+            <div class="serviceMain" id="graphService"> 
+
+                <div>
+                    <p class="head1">3D graphics and CAD</p>
+                    <hr class="line1">
+                    <img class="service-img" src="img/icon/ico3D.png">
+
+                    <div class="servCont">
+                        <ul id="graphic-txt" class="service-txt">
+                            <li>3D Models and Animations</li>
+                            <li>Idea and Product Visualizations</li>
+                            <li>Architectural Models</li>
+                        </ul>
+
+                        <div class="arrowCont">
+                            <div class="g-button">
+                                <p class="g-butt-txt">Show details</p>
+                            </div>
+                            <img class="arrow" src="img/icon/arrowRight.svg">
+                        </div>
+                    </div>
                 </div>
 
-                <p class="head1">Web Development</p>
-                <hr class="line1">
-                <img class="service-img" src="img/icon/icoWeb.png">
-
-                <div id="web-txt" class="service-txt">
-                    <p>Custom Web Creation</p>
-                    <p>UI/UX Optimization</p>
-                    <p>Web Redesign</p>  
+                <div class="servImg2" id="graphback">
+                    <img src="img/site/3D3.jpg">
                 </div>
-            </div>
-
-            <div class="service">
-
-                <div class="backServImg" id="webback">
-                    <img src="">
-                </div>
-
-                <p class="head1">3D graphics</p>
-                <hr class="line1">
-                <img class="service-img" src="img/icon/ico3D.png">
-
-                <div id="třidé-txt" class="service-txt">
-                    <p>3D Models and Animations</p>
-                    <p>Idea Visualizations</p>
-                    <p>Architectural Models</p>
-                </div>
-            </div>
+            </div> 
         </div>
-        <div class="sidebar">
 
-        </div>
         <div class="spacer">
             
         </div>
+
     </section>
 
     <section class="gallery">
